@@ -1,8 +1,7 @@
 import Image from "next/image";
 import coverImage from "../../public/coverImage.jpg";
 import styles from "../../styles/HeroSection.module.css";
-import starIcon from "../../public/star.png";
-// import { ParallaxBanner } from 'react-scroll-parallax';
+
 
 const HeroSection = () => {
     const image = (

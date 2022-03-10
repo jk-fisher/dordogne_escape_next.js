@@ -1,5 +1,6 @@
 import Head from "next/head";
 import HeroSection from "../components/Layout/HeroSection"
+import Amenities from "../components/Property/Amenities";
 
 const Home = () => {
     return ( 
@@ -20,7 +21,11 @@ const Home = () => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered"
                 />
             </Head>
+            
             <HeroSection />
+
+            <Amenities />
+
         </>
 
      );

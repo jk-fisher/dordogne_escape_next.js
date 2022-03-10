@@ -54,6 +54,7 @@
     color: #C6953D;
     border: solid 2px #C6953D;
     width: 10rem;
+    min-width: 10rem;
     height: 4rem;
     font-family: 'Josefin Sans', sans-serif;
     font-style: italic;
