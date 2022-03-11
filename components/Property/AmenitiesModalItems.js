@@ -1,6 +1,6 @@
-import styles from "../../styles/Amenities.module.css"
+import styles from "../../styles/AmenitiesModalItems.module.css"
 
-const AmenitiesItems = () => {
+const AmenitiesModalItems = () => {
     return (
         <div className={styles.content}>
                     <div className={styles.col}>
@@ -46,7 +46,7 @@ const AmenitiesItems = () => {
                             <li className={styles.bold}>Guest Access</li>
                             <li>Private entrance</li>
                             <li>Greeted upon arrival</li><br />
-                            <li><b>Logistics</b></li>
+                            <li className={styles.bold}>Logistics</li>
                             <li>Luggage drop off for guests convenience if arriving early or departing late</li><br />
                             <li className={styles.bold}>Bed and bath</li>
                             <li>Shampoo</li>
@@ -71,4 +71,4 @@ const AmenitiesItems = () => {
     );
 }
  
-export default AmenitiesItems;
+export default AmenitiesModalItems;

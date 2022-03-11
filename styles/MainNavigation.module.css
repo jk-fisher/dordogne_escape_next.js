@@ -54,7 +54,7 @@
     color: #C6953D;
     border: solid 2px #C6953D;
     width: 10rem;
-    min-width: 10rem;
+    min-width: 9rem;
     height: 4rem;
     font-family: 'Josefin Sans', sans-serif;
     font-style: italic;
@@ -67,11 +67,11 @@
 @media screen and (max-width: 900px) {
     .navmenu {
         position: fixed;
-        left: -100%;
+        right: -100%;
         top: 5rem;
         bottom: 0rem;
         flex-direction: column;
-        background-color: #fff;
+        background-color: #060826;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -80,7 +80,7 @@
     }
 
     .navmenu.active {
-        left: 0;
+        right: 0;
     }
 
     .navitem {

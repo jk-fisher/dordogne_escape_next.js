@@ -5,15 +5,26 @@
     text-align: center;
     margin: 1rem;
 }
-.content {
-    overflow-y: scroll;
-    max-height: 60vh;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Josefin Sans';
+    color: #707070;
+    flex: wrap;
 }
-.bold {
-    line-height: 2;
-    font-weight: 600;
-    font-size: 1.2rem;
+.iconList {
+    margin: 2rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    
 }
-.bold{
-    margin-top: 1rem;
+.iconList :nth-child(1) {
+    width: 100%;
+}
+.line {
+    width: 75%;
+    margin: 0 auto;
 }

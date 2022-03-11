@@ -1,0 +1,14 @@
+.iconItem {
+    display: flex;
+    flex-direction: column;
+    color: #707070;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    margin: 1rem;
+    font-weight: 300;
+}
+.iconItem :nth-child(1){
+    font-size: 40px;
+    color: #bdb4a5;
+
+}
