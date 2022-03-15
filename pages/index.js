@@ -1,6 +1,7 @@
 import Head from "next/head";
 import HeroSection from "../components/Layout/HeroSection"
 import Amenities from "../components/Property/Amenities";
+import PropertyDescription from "../components/Property/PropertyDescription";
 
 const Home = () => {
     return ( 
@@ -25,6 +26,8 @@ const Home = () => {
             <HeroSection />
 
             <Amenities />
+
+            <PropertyDescription />
 
         </>
 

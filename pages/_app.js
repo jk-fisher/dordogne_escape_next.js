@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
           duration: 1000,
           easing: "ease-out-cubic",
           // offset: 50,
+          //once: true;
           })
     }, []);
   return (
