@@ -1,0 +1,39 @@
+.container {
+    background-color: #e4e4e4;
+    width: 100%;
+    padding: 1rem;
+    margin: 4rem auto;
+}
+.cardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+@media screen and (min-width: 769px) {
+    .cardContainer {
+        flex-direction: row;
+    }
+}
+.container h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    color: #707070;
+    text-align: center;
+    margin: 0.5rem;
+}
+.textWrapper {
+    max-width: 955px;
+    margin: auto;
+}
+.mainQuote p {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+.rating {
+    margin-left: 0.5rem;
+}
+.star {
+    color: #EDCC77;
+    font-size: 1.2rem;
+}

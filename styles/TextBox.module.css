@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    font-family: 'Mulish', sans-serif;
+    color: rgb(177, 177, 177);
+    background-color: #232435;
+    float: left;
+    position: relative;
+    line-height: 1.3;
+}

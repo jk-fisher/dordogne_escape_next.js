@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+    display: block;
+}
+.imgGrid {
+        display: grid;
+        grid-template-columns: repeat (3, 1fr);
+        margin: 10px 0px;
+        grid-template-areas: "gridItem gridItem gridItem";
+        grid-gap: 10px;
+    }
+    
+    @media screen and (min-width: 700px){
+      .image-cards {
+            margin: 20px 10px;
+            grid-gap: 15px;
+        }
+}

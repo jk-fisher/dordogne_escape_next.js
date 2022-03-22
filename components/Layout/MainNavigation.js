@@ -23,7 +23,7 @@ const MainNavigation = () => {
             </li>
             <li className={styles.navitem}>
                 <Link href="/property">
-                    <a className={styles.navlink}>The Property</a>
+                    <a className={styles.navlink}>The Cottage</a>
                 </Link>
             </li>
             <li className={styles.navitem}>

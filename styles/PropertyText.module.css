@@ -1,0 +1,102 @@
+.text h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #cecece;
+    margin: 1rem;
+}
+.text {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Mulish', sans-serif;
+    color: rgb(177, 177, 177);
+    background-color: #232435;
+    position: relative;
+    line-height: 1.3;
+    display: block;
+}
+@media screen and (min-width: 420px) {
+    .text {
+        width: 90%;
+    }
+}
+@media screen and (min-width: 900px) {  
+    .text {
+        max-width: 500px;
+        float: left;
+        margin: 2rem auto;
+    }
+}
+.textButton {
+    font-weight: 600;
+    color: #cecece;
+    margin: 1rem;
+}
+.icon {
+    margin-left: 0.2rem;
+    margin-bottom: -0.2rem;
+
+}
+.fade-enter-active {
+    animation: moreText 2s ease-in;
+    
+}
+.fade-exit-active {
+    animation: lessText 1s ease-out;
+}
+
+@keyframes moreText {
+    0%{
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lessText {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+}
+.fadeBtn-enter-active {
+    animation: showBtn 3s ease-in;
+    
+}
+.fadeBtn-exit-active {
+    animation: hideBtn 1s ease-out;
+}
+
+@keyframes showBtn {
+    0%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideBtn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
