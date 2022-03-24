@@ -9,7 +9,7 @@ const PropertyText = (props) => {
 
     return ( 
         <div data-aos="fade-up" className={styles.text}>
-                <h3>About The Cottage</h3>
+                <h2>About The Cottage</h2>
                 <p>We have restored an ancient bread oven on our little farm to make a cosy retreat in a quiet corner of the Dordogne. The kitchen and bathroom combine modern fittings with ancient beams and stonework while the comfortable sitting room features a log burning stove and the original paddle for the old bread oven, found when we started the renovation work.
                 It is an ideal base for an active holiday (many options nearby) but the nightlife consists of sharing the stars with the owls and a bottle of wine.<span id="dots">..</span>
                 </p>

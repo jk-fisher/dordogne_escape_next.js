@@ -1,0 +1,104 @@
+.container {
+    background-color: #232435;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.textWrapper {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Mulish', sans-serif;
+    color: rgb(177, 177, 177);
+    position: relative;
+    line-height: 1.3;
+}
+
+.imageWrapper {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .textWrapper {
+        width: 55%;
+    }
+    .imageWrapper {
+        width: 45%;
+        padding: 2rem;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .textWrapper {
+        width: 45%;
+    }
+    .imageWrapper {
+        width: 55%;
+    }
+}   
+    /* @media screen and (min-width: 768px) {  
+    .textWrapper {
+        position: absolute;
+        right: 0rem;
+        z-index: 1;
+        bottom: 0;
+        top: 0;
+        width: 70%;
+        max-width: 570px;
+        padding: 1.2rem;
+    }
+}
+@media screen and (min-width: 1025px) {
+    .textWrapper{
+        position: relative;
+        float: right;
+        padding: 3rem;
+        max-width: 500px;
+        max-height: 706px;
+        
+    }
+    .mapBtn {
+        margin: 3.5rem;
+    }
+} */
+.textWrapper h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+    color: #cecece;
+    margin-bottom: 1rem;
+}
+.textWrapper h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    color: #cecece;
+
+}
+
+.address {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #949494;
+    font-size: 1.8rem;
+    font-weight: 800;
+    max-width: 550px;
+    margin: auto;
+}
+.details {
+    text-align: center;
+    max-width: 550px;
+    margin: auto;
+}
+.mapBtn {
+    margin: 2.5rem;
+    padding: 1rem 3rem;
+}
+

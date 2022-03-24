@@ -16,22 +16,27 @@
 }
 .container h2 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #707070;
     text-align: center;
-    margin: 0.5rem;
+    margin-top: 1rem;
 }
 .textWrapper {
     max-width: 955px;
     margin: auto;
 }
+.textWrapper span {
+    font-size: 0.9rem;;
+}
 .mainQuote p {
+    color: rgb(49, 49, 49);
     text-align: center;
     line-height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 .rating {
     margin-left: 0.5rem;
+    font-size: 0.9rem;
 }
 .star {
     color: #EDCC77;

@@ -7,4 +7,9 @@
 }
 .body {
     margin-top: 0.5rem;
+    line-height: 1.5rem;
+}
+.reviewsBtn {
+    margin: 0.5rem auto;
+    text-decoration: underline;
 }

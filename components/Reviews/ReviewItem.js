@@ -8,6 +8,7 @@ const ReviewItem = (props) => {
                 <FaUser /><h3 className={styles.name}>{props.name}</h3>
                 <span className={styles.date}>{props.date}</span>
                 <div className={styles.body}>{props.body}</div>
+                <button className={styles.reviewsBtn}>Read all reviews</button>
         </Card>
     </li> );
 }
