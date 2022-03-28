@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+collections: 
+  - name: "review"
+    label: "Review"
+    folder: "_reviews"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields: 
+      - {label: "name", name: "Name", widget: "string", required: true}
+      - {label: "date", name: "Date", widget: "datetime", required: true}
+      - {label: "body", name: "Body", widget: "markdown"}

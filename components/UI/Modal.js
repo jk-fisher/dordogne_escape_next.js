@@ -31,7 +31,7 @@ const Modal = (props) => {
     const modalConent = props.show ? (
         <Fragment>
             <Backdrop onClose={props.onClose} />
-            <ModalOverlay onClose={props.onClose}>{props.children}</ModalOverlay> />
+            <ModalOverlay onClose={props.onClose}>{props.children}</ModalOverlay> 
         </Fragment>
     ) : null;
     

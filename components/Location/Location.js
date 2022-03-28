@@ -10,9 +10,9 @@ const Location = () => {
                     <div data-aos="fade-up" className={styles.textWrapper}>
                         <h2>Location</h2><br />
                         <div className={styles.address}>Payzac, Aquitaine-Limousin-Poitou-Charentes, France.</div>
-                        <Link href="https://www.google.com/maps/place/24270+Payzac,+France/@45.4199706,1.1590152,12z/data=!3m1!4b1!4m5!3m4!1s0x47ff32cb5d8b3ba3:0x406651748180060!8m2!3d45.400129!4d1.2185729" target="_blank" rel="noreferrer noopener" passHref>
+                        {/* <Link href="https://www.google.com/maps/place/24270+Payzac,+France/@45.4199706,1.1590152,12z/data=!3m1!4b1!4m5!3m4!1s0x47ff32cb5d8b3ba3:0x406651748180060!8m2!3d45.400129!4d1.2185729" target="_blank" rel="noreferrer noopener" passHref> */}
                             <Button className={styles.mapBtn}>View On Map</Button>
-                        </Link>
+                        {/* </Link> */}
                         <div className={styles.details}>
                             <p>
                                 Our neighbourhood is a friendly farming community, where people still have time to stop and talk. Visiting le petit cottage is like stepping back fifty years in time to when life was kinder to us all.

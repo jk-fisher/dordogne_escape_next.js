@@ -46,31 +46,6 @@
         width: 55%;
     }
 }   
-    /* @media screen and (min-width: 768px) {  
-    .textWrapper {
-        position: absolute;
-        right: 0rem;
-        z-index: 1;
-        bottom: 0;
-        top: 0;
-        width: 70%;
-        max-width: 570px;
-        padding: 1.2rem;
-    }
-}
-@media screen and (min-width: 1025px) {
-    .textWrapper{
-        position: relative;
-        float: right;
-        padding: 3rem;
-        max-width: 500px;
-        max-height: 706px;
-        
-    }
-    .mapBtn {
-        margin: 3.5rem;
-    }
-} */
 .textWrapper h2 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.8rem;
@@ -100,5 +75,6 @@
 .mapBtn {
     margin: 2.5rem;
     padding: 1rem 3rem;
+    color: #cecece;
 }
 

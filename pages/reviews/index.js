@@ -1,12 +1,6 @@
 import Head from "next/head";
-
-import HeroSection from "../components/Layout/HeroSection"
-import Amenities from "../components/Property/Amenities";
-import PropertyDescription from "../components/Property/PropertyDescription";
-import ReviewsBanner from "../components/Reviews/ReviewsBanner";
-import Location from "../components/Location/Location";
-
-import { getSortedReviewsData } from "../lib/reviews";
+import { getSortedReviewsData } from "../../lib/reviews";
+// import ReviewList from "../../components/Reviews/ReviewList";
 
 const getStaticProps = async () => {
     const allReviewsData = getSortedReviewsData()
@@ -14,10 +8,10 @@ const getStaticProps = async () => {
         props: {allReviewsData} 
     }
 }
-const Home = ({ allReviewsData }) => {
-    return ( 
-        <>
-            <Head>
+
+const Reviews = ({ allReviewsData }) => {
+    return (<>
+        <Head>
                 <title>Le Petit Cottage</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,19 +23,8 @@ const Home = ({ allReviewsData }) => {
                     name="keywords" 
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
-            </Head>
-            
-            <HeroSection />
-
-            <Amenities />
-
-            <PropertyDescription />
-
-            <ReviewsBanner />
-
-            <Location />
-
-            <ul >
+        </Head>
+        <ul >
         {allReviewsData.map(({ id, date, title }) => (
             <li key={id} >
                 {title}
@@ -52,9 +35,8 @@ const Home = ({ allReviewsData }) => {
             </li>
         ))}
         </ul>
-        </>
+    </>
 
-     );
+    )
 }
- 
-export { Home as default, getStaticProps} ;
+export { Reviews as default, getStaticProps}
