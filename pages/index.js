@@ -1,5 +1,8 @@
 import Head from "next/head";
 
+import ModalContext from "../store/modal-context";
+import useModal from "../hooks/useModal";
+
 import HeroSection from "../components/Layout/HeroSection"
 import Amenities from "../components/Property/Amenities";
 import PropertyDescription from "../components/Property/PropertyDescription";
@@ -15,6 +18,8 @@ const getStaticProps = async () => {
     }
 }
 const Home = ({ allReviewsData }) => {
+    const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
+
     return ( 
         <>
             <Head>
@@ -30,28 +35,35 @@ const Home = ({ allReviewsData }) => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
             </Head>
-            
-            <HeroSection />
+            <main>
+                <HeroSection />
 
-            <Amenities />
+                <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
+                    <Amenities />
+                </ModalContext.Provider>
 
-            <PropertyDescription />
+                <PropertyDescription />
+    
+                <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
+                    <ReviewsBanner />
+                </ModalContext.Provider>
+                
+                <Location />
 
-            <ReviewsBanner />
+                
+                <ul >
+            {allReviewsData.map(({ id, date, title }) => (
+                <li key={id} >
+                    {title}
+                    <br />
+                    {date}
+                    <br />
 
-            <Location />
+                </li>
+            ))}
+            </ul>
 
-            <ul >
-        {allReviewsData.map(({ id, date, title }) => (
-            <li key={id} >
-                {title}
-                <br />
-                {date}
-                <br />
-
-            </li>
-        ))}
-        </ul>
+            </main>
         </>
 
      );

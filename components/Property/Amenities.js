@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext } from "react";
+
+import ModalContext from "../../store/modal-context";
 import Modal from "../UI/Modal";
-import { FaShower, FaHome, FaRestroom, FaUsers, FaBed } from "react-icons/fa";
 import styles from "../../styles/Amenities.module.css";
 import AmenitiesModalItems from "./AmenitiesModalItems";
 import AmenitiesIcon from "./AmenitiesIcon";
 import Button from "../UI/Button";
+
+import { FaShower, FaHome, FaUsers, FaBed } from "react-icons/fa";
 
 const icons = [
   {
@@ -30,14 +33,7 @@ const icons = [
 ]
 
 const Amenities = () => {
-    const [showModal, setShowModal] = useState(false)
-
-    const closeModalHandler = () => {
-      setShowModal(false)
-    }
-    const openModalHandler = () => {
-      setShowModal(true)
-    }
+    const { openModalHandler } = useContext(ModalContext);
 
     const amenitiesList = icons.map((iconItem) => {
       return <AmenitiesIcon
@@ -54,12 +50,12 @@ const Amenities = () => {
           </div>
           <hr className={styles.line}/>
           <div data-aos="fade-up">
-            <Button onClick={openModalHandler}>Show All Amenities</Button>
+            <Button onClick={() => openModalHandler( <AmenitiesModalItems /> )}>Show All Amenities</Button>
+            <Modal /> 
           </div>
-          <Modal onClose={closeModalHandler} show={showModal}>
-            <h2 className={styles.header}>Amenities</h2>
+          {/* <Modal onClose={handleModal}>
             <AmenitiesModalItems />
-        </Modal>
+        </Modal> */}
     </section>
      );
 }

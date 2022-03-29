@@ -1,44 +1,49 @@
-import React, { useEffect, useState } from "react";
-import styles from "../../styles/Modal.module.css"
+import React, { useEffect, useState, useContext } from "react";
 import ReactDom from "react-dom";
-import { Fragment } from "react/cjs/react.production.min";
+import ModalContext from "../../store/modal-context";
+
+import styles from "../../styles/Modal.module.css"
+import { Fragment } from "react";
 
 const Backdrop = (props) => {
     return <div className={styles.backdrop} onClick={props.onClose} />
 }
 const ModalOverlay = (props) => {
+    let { modalContent } = useContext(ModalContext)
     return(
         <div className={styles.modal}>
             <button className={styles.close} onClick={props.onClose}>
             x
             </button>
             <div className={styles.content}>
-                {props.children}
+                {modalContent}
             </div>
         </div>      
+    
     )
 }
 
 
-const Modal = (props) => {
-    const [isBrowser, setIsBrowser] = useState(false);
+const Modal = () => {
+    let {closeModalHandler, showModal } = useContext(ModalContext);
     
+    const [isBrowser, setIsBrowser] = useState(false);
     
     useEffect(() => {
         setIsBrowser(true);
     }, []);
     
-    const modalConent = props.show ? (
+    const modalDisplay = showModal ? (
         <Fragment>
-            <Backdrop onClose={props.onClose} />
-            <ModalOverlay onClose={props.onClose}>{props.children}</ModalOverlay> 
+            <Backdrop onClose={closeModalHandler} />
+            <ModalOverlay onClose={closeModalHandler} />
         </Fragment>
     ) : null;
     
     if (isBrowser){
         return ( <Fragment>
             {ReactDom.createPortal(
-                        modalConent,
+                        modalDisplay,
                         document.getElementById("modal-root")
             )}
         </Fragment>)

@@ -1,7 +1,8 @@
 import styles from "../../styles/AmenitiesModalItems.module.css"
 
 const AmenitiesModalItems = () => {
-    return (
+    return (<>
+        <h2 className={styles.header}>Amenities</h2>
         <div className={styles.content}>
                     <div className={styles.col}>
                         <ul>
@@ -68,6 +69,7 @@ const AmenitiesModalItems = () => {
                         </ul>
                     </div>
               </div>
+    </>
     );
 }
  
