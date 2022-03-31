@@ -27,7 +27,7 @@ const AmenitiesModalItems = () => {
                         <ul>
                             <li className={styles.bold}>Dining</li>
                             <li>Kitchen space where guests can cook their own meals</li>
-                            <li>Cooking basics - including Pots, pans, oil, salt & pepper</li>
+                            <li>Cooking basics - including Pots, pans, oil, salt and pepper</li>
                             <li>Coffee maker</li>
                             <li>Microwave</li>
                             <li>Stove</li>
