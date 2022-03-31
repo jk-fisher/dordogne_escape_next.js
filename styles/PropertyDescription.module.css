@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    height: auto;
 }
 @media screen and (min-width: 420px) {
     .propertySection {

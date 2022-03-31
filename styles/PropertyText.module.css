@@ -17,14 +17,15 @@
     line-height: 1.3;
     display: block;
 }
-@media screen and (min-width: 420px) {
+
+/* @media screen and (min-width: 420px) {
     .text {
         width: 90%;
     }
-}
+} */
 @media screen and (min-width: 900px) {  
     .text {
-        max-width: 500px;
+        max-width: 600px;
         float: left;
         margin: 2rem auto;
     }

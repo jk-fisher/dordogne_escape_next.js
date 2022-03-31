@@ -6,6 +6,7 @@ const AmenitiesModalItems = () => {
         <div className={styles.content}>
                     <div className={styles.col}>
                         <ul>
+                            <li className={styles.bold}>General</li>
                             <li>Wifi</li>
                             <li>Indoor fireplace</li>
                             <li>Washing Machine</li>

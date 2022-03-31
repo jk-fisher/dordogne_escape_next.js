@@ -1,0 +1,28 @@
+.header {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    color: #707070;
+    text-align: center;
+    margin: 1rem;
+}
+.subheader h3 {
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+.subheader p {
+    margin-left: 10%;
+}
+.reviewList {
+    max-width: 80%;
+    margin: auto;
+}
+.icon {
+    color: gold;
+    font-size: 1.5rem;
+}
+.content {
+    overflow-y: scroll;
+    max-height: 60vh; 
+    margin-top: 2rem;
+    /* margin-left: 5%; */
+}

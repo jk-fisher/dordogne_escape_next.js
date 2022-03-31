@@ -24,6 +24,9 @@ const Reviews = ({ allReviewsData }) => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
         </Head>
+        <main>
+            
+        </main>
         <ul >
         {allReviewsData.map(({ id, date, title }) => (
             <li key={id} >

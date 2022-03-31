@@ -9,6 +9,8 @@ import PropertyDescription from "../components/Property/PropertyDescription";
 import ReviewsBanner from "../components/Reviews/ReviewsBanner";
 import Location from "../components/Location/Location";
 
+import ReviewModalItem from "../components/Reviews/ReviewModalItem";
+
 import { getSortedReviewsData } from "../lib/reviews";
 
 const getStaticProps = async () => {
@@ -19,7 +21,9 @@ const getStaticProps = async () => {
 }
 const Home = ({ allReviewsData }) => {
     const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
+    console.log(allReviewsData)
 
+    
     return ( 
         <>
             <Head>
@@ -45,23 +49,11 @@ const Home = ({ allReviewsData }) => {
                 <PropertyDescription />
     
                 <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
-                    <ReviewsBanner />
+                    <ReviewsBanner reviewData={allReviewsData} />
                 </ModalContext.Provider>
                 
                 <Location />
 
-                
-                <ul >
-            {allReviewsData.map(({ id, date, title }) => (
-                <li key={id} >
-                    {title}
-                    <br />
-                    {date}
-                    <br />
-
-                </li>
-            ))}
-            </ul>
 
             </main>
         </>

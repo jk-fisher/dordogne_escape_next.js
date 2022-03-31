@@ -1,9 +1,11 @@
 .name {
     display: inline;
-    margin-left: 0.2rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
 }
 .date {
     float: right;
+    font-style: italic;
 }
 .body {
     margin-top: 0.5rem;
@@ -12,4 +14,15 @@
 .reviewsBtn {
     margin: 0.5rem auto;
     text-decoration: underline;
+}
+.item {
+    margin: 3rem auto;
+}
+.icon {
+    color: darkgray
+}
+@media screen and (min-width: 768px){
+    .item {
+        margin: 5rem 3rem;
+    }
 }

@@ -20,7 +20,7 @@ const HeroSection = () => {
                     <FaStar />
                     <FaStarHalfAlt />
                     <br />
-                    <p><span className="total-review">4.5</span> (60 reviews)</p></div>
+                    <p><span className="total-review">4.5</span> (86 reviews)</p></div>
             </div>
         </>
      );

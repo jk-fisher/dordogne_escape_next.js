@@ -1,6 +1,8 @@
 .content {
     overflow-y: scroll;
-    max-height: 60vh;
+    max-height: 60vh; 
+    margin-top: 2rem;
+    margin-left: 5%;
 }
 .bold {
     line-height: 2;

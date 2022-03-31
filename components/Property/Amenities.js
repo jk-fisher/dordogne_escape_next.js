@@ -53,9 +53,7 @@ const Amenities = () => {
             <Button onClick={() => openModalHandler( <AmenitiesModalItems /> )}>Show All Amenities</Button>
             <Modal /> 
           </div>
-          {/* <Modal onClose={handleModal}>
-            <AmenitiesModalItems />
-        </Modal> */}
+          
     </section>
      );
 }

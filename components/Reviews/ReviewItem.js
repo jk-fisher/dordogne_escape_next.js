@@ -5,17 +5,18 @@ import Modal from "../UI/Modal";
 import Card from "../UI/Card";
 import styles from "../../styles/ReviewItem.module.css";
 import { FaUser } from "react-icons/fa";
+import ReviewModal from "./ReviewModal";
 
 const ReviewItem = (props) => {
     const { openModalHandler } = useContext(ModalContext);
 
     return ( <li >
         <Card>
-                <FaUser /><h3 className={styles.name}>{props.name}</h3>
+                <FaUser /><p className={styles.name}>{props.name}</p>
                 <span className={styles.date}>{props.date}</span>
                 <div className={styles.body}>{props.body}</div>
                 <button 
-                    onClick={() => openModalHandler( "reviews" )} 
+                    onClick={() => openModalHandler( <ReviewModal reviewData={props.reviewData} /> )} 
                     className={styles.reviewsBtn}>Read all reviews</button>
                 <Modal />
         </Card>
