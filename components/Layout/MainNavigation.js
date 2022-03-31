@@ -22,39 +22,45 @@ const MainNavigation = () => {
                 </Link>
             </li>
             <li className={styles.navitem}>
-                <Link href="/property">
+                The Cottage
+                {/* <Link href="/property">
                     <a className={styles.navlink}>The Cottage</a>
-                </Link>
+                </Link> */}
             </li>
             <li className={styles.navitem}>
-                <Link href="/booking">
+                Booking
+                {/* <Link href="/booking">
                     <a className={styles.navlink}>Booking</a>
                     
-                </Link>
+                </Link> */}
             </li>
             <li className={styles.navitem}>
-                <Link href="/location">
+                Location
+                {/* <Link href="/location">
                     <a className={styles.navlink}>Location</a>
                     
-                </Link>
+                </Link> */}
             </li>
             <li className={styles.navitem}>
-                <Link href="/local_area">
+                Local Area
+                {/* <Link href="/local_area">
                     <a className={styles.navlink}>Local Area</a>
                     
-                </Link>
+                </Link> */}
             </li>
             <li className={styles.navitem}>
-                <Link href="/gallery">
+                Gallery
+                {/* <Link href="/gallery">
                     <a className={styles.navlink}>Gallery</a>
                     
-                </Link>
+                </Link> */}
             </li>
             <li className={styles.navitem}>
-                <Link href="/contact">
+                Contact
+                {/* <Link href="/contact">
                     <a className={styles.navlink}>Contact</a>
                     
-                </Link>
+                </Link> */}
             </li>
           </ul>
           <button className={isOpen === false ? 

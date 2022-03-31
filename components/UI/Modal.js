@@ -16,7 +16,7 @@ const ModalOverlay = (props) => {
             x
             </button>
             <div className={styles.content}>
-                {/* {modalContent} */}
+                {modalContent}
             </div>
         </div>      
     
