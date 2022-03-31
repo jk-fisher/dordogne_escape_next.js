@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import ReactDom from "react-dom";
 import ModalContext from "../../store/modal-context";
 
-import styles from "../../styles/Modal.module.css"
+import styles from "../../styles/Modal.module.css";
 import { Fragment } from "react";
 
 const Backdrop = (props) => {
@@ -16,7 +16,7 @@ const ModalOverlay = (props) => {
             x
             </button>
             <div className={styles.content}>
-                {modalContent}
+                {/* {modalContent} */}
             </div>
         </div>      
     
