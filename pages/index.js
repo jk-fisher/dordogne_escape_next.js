@@ -27,7 +27,7 @@ const Home = ({ allReviewsData }) => {
     return ( 
         <>
             <Head>
-                <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+                {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> */}
                 <title>Le Petit Cottage</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
