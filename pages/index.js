@@ -9,7 +9,6 @@ import PropertyDescription from "../components/Property/PropertyDescription";
 import ReviewsBanner from "../components/Reviews/ReviewsBanner";
 import Location from "../components/Location/Location";
 
-import ReviewModalItem from "../components/Reviews/ReviewModalItem";
 
 import { getSortedReviewsData } from "../lib/reviews";
 
@@ -23,10 +22,12 @@ const Home = ({ allReviewsData }) => {
     const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
     console.log(allReviewsData)
 
+
     
     return ( 
         <>
             <Head>
+                <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
                 <title>Le Petit Cottage</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

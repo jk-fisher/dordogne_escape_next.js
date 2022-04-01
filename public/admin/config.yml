@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: jk-fisher/dordogne_escape_next.js
 
 publish_mode: editorial_workflow
 media_folder: public/
