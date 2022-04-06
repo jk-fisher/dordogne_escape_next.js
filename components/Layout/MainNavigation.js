@@ -28,11 +28,10 @@ const MainNavigation = () => {
                 </Link> */}
             </li>
             <li className={styles.navitem}>
-                Booking
-                {/* <Link href="/booking">
+                <Link href="/bookings">
                     <a className={styles.navlink}>Booking</a>
                     
-                </Link> */}
+                </Link>
             </li>
             <li className={styles.navitem}>
                 Location
