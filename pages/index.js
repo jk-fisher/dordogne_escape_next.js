@@ -20,8 +20,12 @@ const getStaticProps = async () => {
 }
 const Home = ({ allReviewsData }) => {
     const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
-    console.log(allReviewsData)
-
+    allReviewsData.map((review) => {
+        const dateObj = new Date(review.date)
+        const dateString = dateObj.toLocaleDateString("en-GB", { day: 'numeric', month: 'long', year: 'numeric' })
+        review.date = dateString;
+        return review;
+    })
 
     
     return ( 
