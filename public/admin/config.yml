@@ -12,6 +12,6 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{slug}}"
     fields: 
-      - {label: "name", name: "Name", widget: "string", required: true}
-      - {label: "date", name: "Date", widget: "datetime", required: true}
-      - {label: "body", name: "Body", widget: "markdown"}
+      - {label: "name", name: "name", widget: "string", required: true}
+      - {label: "date", name: "date", widget: "datetime", required: true}
+      - {label: "body", name: "body", widget: "markdown"}
