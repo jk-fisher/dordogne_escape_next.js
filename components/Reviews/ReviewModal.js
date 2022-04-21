@@ -13,8 +13,8 @@ const ReviewModal = (props) => {
                 </div>
             <div className={styles.content}>
                 <ul className={styles.reviewList}>
-                    {props.reviewData.map(({ id, date, title, quote }) => (
-                        <ReviewModalItem key={id} date={date} title={title} quote={quote}/>
+                    {props.reviewData.map(({ id, date, name, body }) => (
+                        <ReviewModalItem key={id} date={date} name={name} body={body}/>
                         
                     ))}
 

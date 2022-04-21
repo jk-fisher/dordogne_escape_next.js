@@ -6,9 +6,9 @@ const ReviewModalItem = (props) => {
     return (     
     <li className={styles.item} key={props.id}>
         <FaUser className={styles.icon} />
-        <p className={styles.name}>{props.title}</p>
+        <p className={styles.name}>{props.name}</p>
         <span className={styles.date}>{props.date}</span>
-        <p className={styles.body}>{props.quote}</p>
+        <p className={styles.body}>{props.body}</p>
     </li>
     );
 }
