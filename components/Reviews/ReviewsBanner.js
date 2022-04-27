@@ -14,7 +14,7 @@ const ReviewsBanner = ({ reviewData }) => {
                 key={item.id}
                 name={item.name}
                 date={item.date}
-                body={item.body}
+                body={item.markdownBody}
                 reviewData={reviewData}
             />
 
