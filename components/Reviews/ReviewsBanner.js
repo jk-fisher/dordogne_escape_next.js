@@ -12,9 +12,9 @@ const ReviewsBanner = ({ reviewData }) => {
         return ( 
             <ReviewItem
                 key={item.id}
-                name={item.title}
+                name={item.name}
                 date={item.date}
-                body={item.quote}
+                body={item.markdownBody}
                 reviewData={reviewData}
             />
 

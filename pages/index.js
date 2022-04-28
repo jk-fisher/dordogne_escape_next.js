@@ -14,15 +14,20 @@ import { getSortedReviewsData } from "../lib/reviews";
 import { Fragment } from "react";
 
 const getStaticProps = async () => {
-    const allReviewsData = getSortedReviewsData()
+    const allReviewsData = getSortedReviewsData();
+    allReviewsData.map((review) => {
+        const dateObj = new Date(review.date)
+        const dateString = dateObj.toLocaleDateString("en-GB", { day: 'numeric', month: 'long', year: 'numeric' })
+        review.date = dateString;
+        return review;
+    })
     return {
         props: {allReviewsData} 
     }
 }
 const Home = ({ allReviewsData }) => {
     const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
-    console.log(allReviewsData)
-
+    
 
     
     return ( 
