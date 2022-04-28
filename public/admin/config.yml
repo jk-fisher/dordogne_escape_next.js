@@ -10,7 +10,7 @@ collections:
     label: "Review"
     folder: "_reviews"
     create: true
-    slug: "{{year}}-{{month}}-{{name}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     fields: 
       - {label: "name", name: "name", widget: "string", required: true}
       - {label: "date", name: "date", widget: "date", date_format: "DD-MM-YYYY", required: true}
