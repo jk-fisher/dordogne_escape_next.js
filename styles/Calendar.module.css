@@ -3,7 +3,7 @@
     max-width: 395px;
     background-color: white;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    margin: 5rem auto;
+    margin: auto;
 }
 .monthYear {
     width: 100%;
@@ -15,7 +15,7 @@
     text-align: center;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
-
+/* arrow icon */
 .monthYear i {
     font-size: 20px;
     cursor: pointer;
@@ -27,12 +27,12 @@
 
 .month,
 .year {
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    color: white;
+    color: #e5ddd0;
 }
 
 .selectedDate {
@@ -45,7 +45,7 @@
     height: 50px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 3rem;
 }
 
 .weekdays > div {
@@ -62,6 +62,7 @@
 }
 
 .days {
+    padding-top: 2rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -69,7 +70,7 @@
     justify-content: center;    
 }
 
-.days > div {
+.day {
     font-size: 14px;
     /* padding: 3px; */
     width: calc(400px / 7);
@@ -89,28 +90,28 @@
     .days {
         width: 100%;
         margin: 0 auto;
-        max-width: 345px;
+        max-width: 350px;
     }
-    .days > div {
-        width: calc(304px / 7);
+    .day {
+        width: calc(350px / 7);
     }
     .weekdays > div {
-        width: calc(304px / 7);
+        width: calc(350px / 7);
     }
 }
-@media screen and (min-width: 402px) {
+/* @media screen and (min-width: 402px) {
     .days {
         max-width: 375px;
     }
-    .days > div {
+    .day {
         width: calc(375px / 7);
     }
     .weekdays > div {
         width: calc(375px / 7);
     }
-}
+} */
 /* at wider screen display calendar and prices inline */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .bookingsWrapper {
         display: flex;
         justify-content: space-around;
@@ -121,29 +122,20 @@
     .calendarContainer {
         margin: 0 5px;
     }
-    /* .days {
-        max-width: 330px;
-    }
-    .days > div {
-        width: calc(330px / 7);
-    }
-    .weekdays > div {
-        width: calc(330px / 7);
-    } */
-}
+} */
 
 .days div:hover:not(.today){
     background-color: #C0C0C0;
     cursor: pointer;
 }
 
-.prev-date,
-.next-date {
+.prevDate,
+.nextDate {
     opacity: 0.5;
 }
 
 .today {
-    background-color: #C3A97B;
+    background-color: #dac298;
 }
 
 .none {

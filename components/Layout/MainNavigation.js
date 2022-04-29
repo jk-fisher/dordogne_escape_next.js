@@ -29,7 +29,7 @@ const MainNavigation = () => {
             </li>
             <li className={styles.navitem}>
                 <Link href="/bookings">
-                    <a className={styles.navlink}>Booking</a>
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Booking</a>
                     
                 </Link>
             </li>
