@@ -13,11 +13,16 @@ const CalendarDaysList = () => {
 
     const today = new Date();
 
+    console.log('calendarListComp', visibleDates)
     const prevClassName =  `${styles.day} ${styles.prevDate}`;
     // const prevClassName =  `${styles.day} ${styles.prevDate} ${clicked ? styles.clicked : ''}`;
     const currentClassName = `${styles.day}`;
     const nextClassName = `${styles.day} ${styles.nextDate}`;
 
+    const selectDatesHandler = (e) => {
+        console.log(e.currentTarget.dataset.id)
+        
+    }
 
     
     const days = visibleDates.map((day, index) => {
@@ -26,6 +31,8 @@ const CalendarDaysList = () => {
             console.log('prev day')
             return <CalendarDaysItem
                         className={prevClassName} 
+                        index={index}
+                        onClick={selectDatesHandler}
                         key={index}>
                         {day}</CalendarDaysItem>   
         }else if(index >= firstDayIndex - 1 && index < lastDayIndex){
@@ -34,28 +41,34 @@ const CalendarDaysList = () => {
                 myDate.getMonth() === today.getMonth() &&
                 myDate.getFullYear() === today.getFullYear()){
                     return <CalendarDaysItem
-                                className={`${currentClassName} ${styles.today}` } 
+                                className={`${currentClassName} ${styles.today}` }
+                                index={index} 
+                                onClick={selectDatesHandler}
                                 key={index}>
                                 {day}</CalendarDaysItem>   
             }else{
-                return <CalendarDaysItem
+                return <CalendarDaysItem onClick={selectDatesHandler}
                             className={currentClassName} 
+                            index={index}
                             key={index}>
                             {day}</CalendarDaysItem>   
             }
         }else if(index >= lastDayIndex){
             return <CalendarDaysItem
                         className={nextClassName} 
+                        index={index}
+                        onClick={selectDatesHandler}
                         key={index}>
                         {day}</CalendarDaysItem>    
         }
     })
+    console.log(days)
 
     useEffect(() => {
         renderCalendarHandler()
     },[]);
 
-    return ( <ul className={styles.days} onClick={(e) => {highlightDaysHandler(e.target)}}>
+    return ( <ul className={styles.days}>
             {days}
         </ul> );
 }

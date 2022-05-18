@@ -41,7 +41,7 @@ const Calendar = () => {
         <div className={styles.monthYear}>
             <div className={styles.prev}>
                <FaAngleLeft onClick={prevMonthHandler} fill='white' className={`${prevMonthArrowVisible} ? ${styles.icon} : ${styles.none} `} />
-               <FaAngleLeft onClick={prevYearHandler} fill='white' className={`${prevYearArrowVisible} ? ${styles.icon} : ${styles.none} `}/>
+               <FaAngleLeft onClick={prevYearHandler} fill='white' className={`${!prevYearArrowVisible} ? ${styles.icon} : ${styles.none} `}/>
             </div>
             <div className={styles.date}>
                 <div className={styles.month}>{month[myDate.getMonth()]}</div>
@@ -49,8 +49,8 @@ const Calendar = () => {
                 <div className={styles.selectedDate}></div>
             </div>
             <div className={styles.next}>
-                <FaAngleRight onClick={nextMonthHandler} fill='white' className={`${nextMonthArrowVisible} ? ${styles.icon} : ${styles.none} `}/>
-                <FaAngleRight onClick={nextYearHandler} fill='white' className={`${nextYearArrowVisible} ? ${styles.icon} : ${styles.none}`}/>
+                <FaAngleRight onClick={nextMonthHandler} fill='white' className={styles.icon}/>
+                <FaAngleRight onClick={nextYearHandler} fill='white' className={styles.icon}/>
             </div>
         </div>
         <div className={styles.weekdays}>
