@@ -1,6 +1,6 @@
 import styles from "../../styles/Bookings.module.css";
 
-import Calendar from "./Calendar";
+import Calendar from "./Calendar/Calendar";
 import PriceInfo from "./PriceInfo";
 import Button from "../UI/Button";
 
