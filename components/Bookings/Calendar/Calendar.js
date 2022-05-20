@@ -3,21 +3,24 @@ import styles from "../../../styles/Calendar.module.css";
 import useCalendar from "../../../hooks/useCalendar";
 
 import CalendarDaysList from "./CalendarDaysList";
+import CalendarContext from "../../../store/calendar-context";
+import { useContext } from "react";
 
 
 const Calendar = () => {
 
-    const {myDate, 
+    const {
+        myDate,
         prevMonthArrowVisible, 
         prevYearArrowVisible, 
-        nextMonthArrowVisible, 
-        nextYearArrowVisible,
-        nextMonthHandler,
         prevMonthHandler,
-        prevYearHandler, 
-        nextYearHandler} = useCalendar();
+        // nextMonthHandler,
+        nextYearHandler,
+        prevYearHandler} = useCalendar(CalendarContext);
+    
+    const { nextMonthHandler } = useContext(CalendarContext)
+    // const myTest = useContext(CalendarContext)
 
-        
 
     const month = [
         "January",
@@ -34,8 +37,7 @@ const Calendar = () => {
         "December"
     ];
 
-    console.log(prevMonthArrowVisible, nextMonthArrowVisible, prevYearArrowVisible, nextYearArrowVisible)
-
+    
 
     return ( <div className={styles.calendarContainer}>
         <div className={styles.monthYear}>

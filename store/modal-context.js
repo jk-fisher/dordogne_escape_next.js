@@ -8,16 +8,4 @@ const ModalContext = React.createContext({
     modalContent: ""
 }); 
 
-// let ModalContext;
-// let { Provider } = (ModalContext = React.createContext());
-
-// let ModalProvider = ({ children }) => {
-//   let { modal, handleModal, modalContent } = useModal();
-//   return (
-//     <Provider value={{ modal, handleModal, modalContent }}>
-//       <Modal />
-//       {children}
-//     </Provider>
-//   );
-// };
 export default ModalContext;

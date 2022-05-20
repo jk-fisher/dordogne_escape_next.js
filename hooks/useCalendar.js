@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default () => {
-    const date = new Date();
-    const d = new Date(date.getFullYear(), date.getMonth(), 1)
-    const [ myDate, setMyDate ] = useState(d);
+    const [ myTest, setMyTest ] = useState(true);
+
+    const [ myDate, setMyDate ] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
     const [ visibleDates, setVisibleDates ] = useState([])
 
     const [ lastDate, setLastDate ] = useState(null);
@@ -24,6 +24,9 @@ export default () => {
     const [prevMonthArrowVisible, setPrevMonthArrowVisible ] = useState(true);
     const [prevYearArrowVisible, setPrevYearArrowVisible ] = useState(false);
 
+    useEffect(() => {
+        renderCalendarHandler()
+    }, [myDate]);
 
     const findIndexofDay = (dateObject) => {
         const myDate = dateObject.getDate();
@@ -85,13 +88,16 @@ export default () => {
     }
 
     const highlightDaysHandler = (e) => {
-        console.log(e, 'dateClicked')
+        // console.log(e, 'dateClicked')
         
     }
     
+
+
+
     const renderCalendarHandler = () => {
 
-    console.log('rendercalendarrun', myDate)
+    console.log('renderCalendarRan', myDate)
         
         const lastDate = new Date(
             myDate.getFullYear(),
@@ -125,7 +131,6 @@ export default () => {
         // console.log(nextMonthDays)
 
         
-        
         // display prev month days 
         firstDayIndex ++;
         const prevdaysIndex = [...Array(firstDayIndex -1).keys()]; 
@@ -153,7 +158,6 @@ export default () => {
         setLastDayIndex(lastDayIndex);
         const visibleDates = [...prevMonthDates, ...thisMonthDates, ...nextMonthDates]
         setVisibleDates(visibleDates);
-        console.log(visibleDates)
         highlightDaysHandler();
 
         // console.log('arrows', prevMonthArrowVisible, prevYearArrowVisible)
@@ -176,45 +180,51 @@ export default () => {
             setPrevYearArrowVisible(true)
             
         };
+        // setMyDate(new Date(new Date().getFullYear(), new Date().getMonth() + 1, 1))
+        // console.log(myTest)
     } 
+
     const nextMonthHandler = () => {
         // console.log('mydate', myDate, myDate.getMonth())
         const newMonth = myDate.getMonth()+1;
         // console.log('newMonth', newMonth)
         const newDate = new Date(myDate.getFullYear(), newMonth, myDate.getDate())
+        console.log('newDate', newDate)
         setMyDate(newDate);
-        // console.log('newDate', newDate)
-        renderCalendarHandler()
+        console.log('nextMonthHandler', myDate);
+        renderCalendarHandler();
     }
-    // const nextYearHandler = () => {
-    //     const newYear = myDate.getFullYear()+1
-    //     setMyDate(new Date(newYear, myDate.getMonth(), myDate.getDate()))
-    //     console.log(myDate)
-    //     renderCalendarHandler()
-    // }
-    // const prevMonthHandler = () => {
-    //     const newMonth = myDate.getMonth()-1
-    //     setMyDate(new Date(myDate.getFullYear(), newMonth, myDate.getDate()))
-    //     renderCalendarHandler()
-    // }
-    // const prevYearHandler = () => {
-    //     const newYear = myDate.setFullYear(myDate.getFullYear()-1)
-    //     setMyDate(new Date(newYear, myDate.getMonth(), myDate.getDate()))
-    //     renderCalendarHandler()
-    // }
+    // console.log(prevMonthArrowVisible, prevYearArrowVisible)
+
+    const nextYearHandler = () => {
+            // const newYear = myDate.getFullYear()+1
+            // setMyDate(new Date(newYear, myDate.getMonth(), myDate.getDate()))
+            // console.log(myDate)
+            // renderCalendarHandler()
+        }
+    const prevMonthHandler = () => {
+        // const newMonth = myDate.getMonth()-1
+        // setMyDate(new Date(myDate.getFullYear(), newMonth, myDate.getDate()))
+        // renderCalendarHandler()
+    }
+    const prevYearHandler = () => {
+        // const newYear = myDate.setFullYear(myDate.getFullYear()-1)
+        // setMyDate(new Date(newYear, myDate.getMonth(), myDate.getDate()))
+        // renderCalendarHandler()
+    }
     
     return { myDate,
+        visibleDates, 
+        myTest,
         renderCalendarHandler, 
         highlightDaysHandler, 
-        // nextMonthHandler,
-        // nextYearHandler,
-        // prevMonthHandler,
-        // prevYearHandler,
-        visibleDates, 
         firstDayIndex, 
         lastDayIndex, 
         prevMonthArrowVisible, 
         prevYearArrowVisible, 
-        nextMonthHandler
+        nextMonthHandler, 
+        prevMonthHandler, 
+        nextYearHandler, 
+        prevYearHandler
          }
 }
