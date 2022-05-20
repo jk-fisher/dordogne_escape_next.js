@@ -10,7 +10,6 @@ import { useContext } from "react";
 const Calendar = () => {
 
     const {
-        myDate,
         prevMonthArrowVisible, 
         prevYearArrowVisible, 
         prevMonthHandler,
@@ -18,7 +17,7 @@ const Calendar = () => {
         nextYearHandler,
         prevYearHandler} = useCalendar(CalendarContext);
     
-    const { nextMonthHandler } = useContext(CalendarContext)
+    const { nextMonthHandler, myDate } = useContext(CalendarContext)
     // const myTest = useContext(CalendarContext)
 
 

@@ -25,8 +25,9 @@ export default () => {
     const [prevYearArrowVisible, setPrevYearArrowVisible ] = useState(false);
 
     useEffect(() => {
-        renderCalendarHandler()
+        renderCalendarHandler();
     }, [myDate]);
+
 
     const findIndexofDay = (dateObject) => {
         const myDate = dateObject.getDate();
@@ -189,10 +190,7 @@ export default () => {
         const newMonth = myDate.getMonth()+1;
         // console.log('newMonth', newMonth)
         const newDate = new Date(myDate.getFullYear(), newMonth, myDate.getDate())
-        console.log('newDate', newDate)
         setMyDate(newDate);
-        console.log('nextMonthHandler', myDate);
-        renderCalendarHandler();
     }
     // console.log(prevMonthArrowVisible, prevYearArrowVisible)
 
