@@ -33,7 +33,7 @@ const CalendarDaysList = () => {
                         {day}</CalendarDaysItem>   
         }else if(index >= firstDayIndex - 1 && index < lastDayIndex){
             if(
-                myDate.getDate() === day &&
+                today.getDate() === day &&
                 myDate.getMonth() === today.getMonth() &&
                 myDate.getFullYear() === today.getFullYear()){
                     return <CalendarDaysItem

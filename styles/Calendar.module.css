@@ -5,7 +5,17 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     margin: auto;
 }
-
+.icon {
+    visibility: visible;
+    display: block;
+    margin: 1.2rem 0.5rem;
+    pointer-events: all;
+    cursor: pointer;
+}
+.none {
+    visibility: hidden;
+    pointer-events: none;
+}
 .monthYear {
     width: 100%;
     height: 120px;
@@ -16,21 +26,6 @@
     text-align: center;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
-/* arrow icon */
-/* .icon {
-    z-index: 99;
-    font-size: 20px;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 27px;
-    padding: 0 10px;
-    color: white;
-} */
-.icon {
-    display: block;
-    margin: 1.2rem 0.5rem;
-}
-
 .month,
 .year {
     font-size: 1.8rem;
@@ -90,7 +85,6 @@
 @media screen and (min-width: 320px){
     .calendarContainer {
         min-width: 304px;
-        /* max-width: 310px; */
         height: 520px;
     }
     .days {
@@ -144,7 +138,3 @@
     background-color: #dac298;
 }
 
-.none {
-    visibility: hidden;
-    /* display: none; */
-}

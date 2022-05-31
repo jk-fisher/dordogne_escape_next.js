@@ -4,22 +4,20 @@ import useCalendar from "../../../hooks/useCalendar";
 
 import CalendarDaysList from "./CalendarDaysList";
 import CalendarContext from "../../../store/calendar-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const Calendar = () => {
 
-    const {
-        prevMonthArrowVisible, 
-        prevYearArrowVisible, 
-        prevMonthHandler,
-        // nextMonthHandler,
-        nextYearHandler,
-        prevYearHandler} = useCalendar(CalendarContext);
+        const { nextMonthHandler, 
+            nextYearHandler,
+            prevMonthHandler,
+            prevYearHandler,
+            prevMonthArrowVisible, 
+            prevYearArrowVisible,
+            myDate } = useContext(CalendarContext)
     
-    const { nextMonthHandler, myDate } = useContext(CalendarContext)
-    // const myTest = useContext(CalendarContext)
-
+    const today = new Date();
 
     const month = [
         "January",
@@ -36,13 +34,16 @@ const Calendar = () => {
         "December"
     ];
 
-    
+    console.log(prevMonthArrowVisible, prevYearArrowVisible)
+
+    const monthArrowVisible = prevMonthArrowVisible ? styles.icon : styles.none;
+    const yearArrowVisible = prevYearArrowVisible ? styles.icon : styles.none; 
 
     return ( <div className={styles.calendarContainer}>
         <div className={styles.monthYear}>
             <div className={styles.prev}>
-               <FaAngleLeft onClick={prevMonthHandler} fill='white' className={`${prevMonthArrowVisible} ? ${styles.icon} : ${styles.none} `} />
-               <FaAngleLeft onClick={prevYearHandler} fill='white' className={`${!prevYearArrowVisible} ? ${styles.icon} : ${styles.none} `}/>
+               <FaAngleLeft onClick={prevMonthHandler} fill='white' className={monthArrowVisible} />
+               <FaAngleLeft onClick={prevYearHandler} fill='white' className={yearArrowVisible}/>
             </div>
             <div className={styles.date}>
                 <div className={styles.month}>{month[myDate.getMonth()]}</div>

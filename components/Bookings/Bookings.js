@@ -9,10 +9,10 @@ import Button from "../UI/Button";
 const Bookings = () => {
 
     // const { myTest } = useCalendar();
-    const {myDate, nextMonthHandler, visibleDates, firstDayIndex, lastDayIndex } = useCalendar();
+    const {myDate, nextMonthHandler, nextYearHandler, prevMonthHandler, prevYearHandler, prevMonthArrowVisible, prevYearArrowVisible, visibleDates, firstDayIndex, lastDayIndex } = useCalendar();
 
     return ( <section className={styles.bookingsWrapper}>
-        <CalendarContext.Provider value={{ myDate, nextMonthHandler, visibleDates, firstDayIndex, lastDayIndex }}>
+        <CalendarContext.Provider value={{ myDate, nextMonthHandler, nextYearHandler, prevMonthHandler, prevYearHandler, prevMonthArrowVisible, prevYearArrowVisible, visibleDates, firstDayIndex, lastDayIndex }}>
             <Calendar />
         </CalendarContext.Provider>
         <PriceInfo />

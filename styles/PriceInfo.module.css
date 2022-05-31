@@ -7,9 +7,9 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     margin: auto;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 790px){
     .priceContainer{
-        margin: 0px 5px;
+        margin-top: 5rem;
     }
 }
 .dateEnquiry {
