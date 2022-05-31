@@ -162,11 +162,11 @@ export default () => {
         setVisibleDates(visibleDates);
         highlightDaysHandler();
 
-        // console.log('arrows', prevMonthArrowVisible, prevYearArrowVisible)
         //hide and show arrow icons
         if(myDate.getFullYear() <= new Date().getFullYear() &&
         myDate.getMonth() <= new Date().getMonth()){
             setPrevMonthArrowVisible(false);
+            setPrevYearArrowVisible(false);
             
         } else if (myDate.getFullYear() <= new Date().getFullYear()){
             setPrevYearArrowVisible(false)
@@ -182,40 +182,28 @@ export default () => {
             setPrevYearArrowVisible(true)
             
         };
-        // setMyDate(new Date(new Date().getFullYear(), new Date().getMonth() + 1, 1))
-        // console.log(myTest)
     } 
 
     const nextMonthHandler = () => {
         const newMonth = myDate.getMonth()+1;
         const newDate = new Date(myDate.getFullYear(), newMonth, myDate.getDate())
         setMyDate(newDate);
-        setPrevMonthArrowVisible(true);
 
     }
-    // console.log(prevMonthArrowVisible, prevYearArrowVisible)
-
     const nextYearHandler = () => {
         const newYear = myDate.getFullYear()+1;
         const newDate = new Date(newYear, myDate.getMonth(), myDate.getDate())
         setMyDate(newDate);
-        setPrevYearArrowVisible(true);
     }
     const prevMonthHandler = () => {
         const newMonth = myDate.getMonth()-1;
         const newDate = new Date(myDate.getFullYear(), newMonth, myDate.getDate())
         setMyDate(newDate);
-        if(newMonth <= new Date().getMonth()){
-            setPrevMonthArrowVisible(false)
-        }
     }
     const prevYearHandler = () => {
         const newYear = myDate.getFullYear()-1;
         const newDate = new Date(newYear, myDate.getMonth(), myDate.getDate())
         setMyDate(newDate);
-        if(newYear <= new Date().getYear()){
-            setPrevYearArrowVisible(false)
-        }
     }
     
     return { myDate,
