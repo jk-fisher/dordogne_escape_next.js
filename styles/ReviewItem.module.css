@@ -23,6 +23,6 @@
 }
 @media screen and (min-width: 768px){
     .item {
-        margin: 5rem 3rem;
+        margin: 2rem 3rem 5rem 3rem;
     }
 }

@@ -1,0 +1,142 @@
+.calendarContainer {
+    width: 100%;
+    max-width: 395px;
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+.icon {
+    opacity: 1;
+    display: block;
+    margin: 1.2rem 0.5rem;
+    pointer-events: all;
+    cursor: pointer;
+}
+.none {
+    opacity: 0;
+    display: block;
+    margin: 1.2rem 0.5rem;
+    pointer-events: none;
+}
+.monthYear {
+    width: 100%;
+    height: 120px;
+    background-color: #323349;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.month,
+.year {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #e5ddd0;
+}
+
+.selectedDate {
+    font-size: 15px;
+    color: white;
+}
+
+.weekdays {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.weekdays > div {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    width: calc(400px / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
+    font-weight: 500;
+    /* margin: 3px; */
+}
+
+.days {
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #707070;
+    justify-content: center;    
+}
+
+.day {
+    font-size: 14px;
+    /* padding: 3px; */
+    width: calc(400px / 7);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+    /* margin: 0 auto; */
+}
+@media screen and (min-width: 320px){
+    .calendarContainer {
+        min-width: 304px;
+        height: 520px;
+    }
+    .days {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .day {
+        width: calc(350px / 7);
+    }
+    .weekdays > div {
+        width: calc(350px / 7);
+    }
+}
+/* @media screen and (min-width: 402px) {
+    .days {
+        max-width: 375px;
+    }
+    .day {
+        width: calc(375px / 7);
+    }
+    .weekdays > div {
+        width: calc(375px / 7);
+    }
+} */
+/* at wider screen display calendar and prices inline */
+/* @media screen and (min-width: 768px) {
+    .bookingsWrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 50px 0px;
+        box-sizing: border-box;
+    }
+    .calendarContainer {
+        margin: 0 5px;
+    }
+} */
+
+.days div:hover:not(.today){
+    background-color: #C0C0C0;
+    cursor: pointer;
+}
+
+.prevDate,
+.nextDate {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: #dac298;
+}
+

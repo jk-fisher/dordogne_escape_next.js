@@ -11,6 +11,7 @@ import Location from "../components/Location/Location";
 
 
 import { getSortedReviewsData } from "../lib/reviews";
+import { Fragment } from "react";
 
 const getStaticProps = async () => {
     const allReviewsData = getSortedReviewsData();
@@ -30,7 +31,7 @@ const Home = ({ allReviewsData }) => {
 
     
     return ( 
-        <>
+        <Fragment>
             <Head>
                 {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> */}
                 <title>Le Petit Cottage</title>
@@ -62,7 +63,8 @@ const Home = ({ allReviewsData }) => {
 
 
             </main>
-        </>
+
+        </Fragment>
 
      );
 }
