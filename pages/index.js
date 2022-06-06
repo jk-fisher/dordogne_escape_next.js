@@ -46,23 +46,19 @@ const Home = ({ allReviewsData }) => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
             </Head>
-            <main>
-                <HeroSection />
+            <HeroSection />
 
-                <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
-                    <Amenities />
-                </ModalContext.Provider>
+            <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
+                <Amenities />
+            </ModalContext.Provider>
 
-                <PropertyDescription />
-    
-                <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
-                    <ReviewsBanner reviewData={allReviewsData} />
-                </ModalContext.Provider>
-                
-                <Location />
+            <PropertyDescription />
 
-
-            </main>
+            <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
+                <ReviewsBanner reviewData={allReviewsData} />
+            </ModalContext.Provider>
+            
+            <Location />
 
         </Fragment>
 
