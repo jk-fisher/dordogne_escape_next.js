@@ -19,8 +19,8 @@ collections:
     label: 'Carousel'
     media_folder: "public/carouselImages"
     public_folder: ""
-    folder: "/public/carouselImages"
-    create: true
+    folder: "/test/carouselImages"
+    create: false
     slug: "{{name}}"
     fields: 
       - {label: "Name", name: "name", widget: "string", required: true}
