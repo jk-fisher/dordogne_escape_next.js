@@ -17,6 +17,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "gallery"
     label: "Gallery"
+    folder: "public/carouselImages"
     media_folder: /carouselImages
     public_folder: "/carouselImages"
     slug: "{{year}}-{{month}}-{{day}}-{{name}}"
