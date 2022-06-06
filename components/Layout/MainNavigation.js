@@ -49,10 +49,10 @@ const MainNavigation = () => {
             </li>
             <li className={styles.navitem}>
                 Gallery
-                {/* <Link href="/gallery">
-                    <a className={styles.navlink}>Gallery</a>
+                <Link href="/gallery">
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Gallery</a>
                     
-                </Link> */}
+                </Link>
             </li>
             <li className={styles.navitem}>
                 Contact

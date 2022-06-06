@@ -1,13 +1,20 @@
-import Head from "next/head";
-import { Fragment } from "react";
+import { Fragment } from "react"
+import Head from "next/head"
+import styles from "../../styles/ImageCarousel.module.css"
+import ImageCarousel from "../../components/UI/ImageCarousel"
+import { getSortedImages } from "../../lib/carousel"
 
-import Bookings from "../../components/Bookings/Bookings";
 
+const getStaticProps = async () => {
+    const carouselImages = getSortedImages();
+    return {
+      props: { carouselImages }
+    }
+}
 
-const bookings = () => {
-    return ( 
-        <Fragment>
-            <Head>
+const gallery = ({ carouselImages }) => {
+    return ( <Fragment>
+        <Head>
                 <title>Le Petit Cottage</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +27,8 @@ const bookings = () => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
             </Head>
-            <Bookings />
-        </Fragment>
-     );
+                <ImageCarousel images={carouselImages} />
+    </Fragment> );
 }
  
-export default bookings;
+export { gallery as default, getStaticProps};
