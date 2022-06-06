@@ -9,7 +9,7 @@ collections:
   - name: "review"
     label: "Review"
     folder: "_reviews"
-    create: false
+    create: true
     slug: "{{year}}-{{month}}-{{day}}-{{name}}"
     fields: 
       - {label: "Name", name: "name", widget: "string", required: true}
@@ -17,9 +17,9 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: 'carousel'
     label: 'Carousel'
-    media_folder: "public/carouselImages"
+    media_folder: ""
     public_folder: ""
-    folder: "/test/carouselImages"
+    folder: "/public/carouselImages"
     create: true
     slug: "{{name}}"
     fields: 
