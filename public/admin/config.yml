@@ -19,6 +19,7 @@ collections:
     label: 'Carousel'
     media_folder: "public/carouselImages"
     public_folder: ""
+    folder: "/public/carouselImages"
     create: true
     slug: "{{name}}"
     fields: 
