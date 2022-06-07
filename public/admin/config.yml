@@ -24,11 +24,7 @@ collections:
     slug: "{{name}}"
     fields: 
       - {label: "Name", name: "name", widget: "string", required: true}
-      - label: "Image"
-        name: image
-        widget: "list"
-        required: true
-        field: { label: "Image", name: "image", widget: "image"}
+      - {label: "Image", name: image, widget: "list", required: true, field: { label: "Image", name: "image", widget: "image"}}
     # types:
     #   - label: "Carousel"
     #     name: "carousel"
