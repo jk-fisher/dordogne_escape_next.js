@@ -26,7 +26,7 @@ const ImageCarousel = ({ images }) => {
         return {
             key: index,
             content: <Image className={styles.image} src={`/carouselImages/${imageId}.jpg`} alt={index} width={1000}
-            height={1000} onClick={() => setState({ goToSlide: index, offsetRadius: 3 })}/>
+            height={1000} onClick={() => setState({ goToSlide: index, offsetRadius: state.offsetRadius })}/>
         }
     })
     imageArray.map((slide, index) => {
@@ -96,6 +96,20 @@ const ImageCarousel = ({ images }) => {
         return { ...prevIndex, goToSlide: prevIndex.goToSlide + 1 }
     })
   }
+
+  useEffect(() => {
+    const viewportResizeHandler = () => {
+      if (window.innerWidth > 900){
+        setState({ offsetRadius: 3})
+      } else {
+        setState({ offsetRadius: 1 })
+      }
+    }
+    viewportResizeHandler();
+    window.addEventListener("resize", viewportResizeHandler);
+
+    return () => window.removeEventListener("resize", viewportResizeHandler)
+  }, []);
 
   useEffect(() => {
     timer.current = setInterval(() => {

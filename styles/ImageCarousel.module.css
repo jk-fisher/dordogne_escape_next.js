@@ -1,61 +1,63 @@
-.wrapper {
-    text-align: center;
-    box-sizing: content-box;
-    z-index: 1;
-    /* height: 30rem; */
-    /* background-color: #e4e4e4; */
-    /* width: 70%; */
-    /* width: "80%";
-    height: "500px";
-    margin: 0 auto; */
-}
+
 .carousel{
     background-color: #e4e4e4;
     width: 100%;
-    padding: 5vh 20vh;
+    padding: 0vh 0vw;
+    z-index: 9;
 }
 .carousel div{
-    height: 70vh;
+    height: 80vh;
+    min-height: 450px;
 }
+
 .carousel div div:nth-child(1){
-    /* z-index: 0; */
-    /* background-color: blue; */
     width: 100rem;
-    max-width: 25%;
+    max-width: 65%;
 }
 .carousel div div:nth-child(2){
-    /* z-index: 0; */
-    /* background-color: blue; */
     width: 100rem;
-    max-width: 30%;
+    max-width: 70%;
 }
 .carousel div div:nth-child(3){
-    /* z-index: 0; */
-    /* background-color: green; */
     width: 100rem;
-    max-width: 45%;
+    max-width: 65%;
 }
-.carousel div div:nth-child(4){
-    /* z-index: 0; */
-    /* background-color: pink; */
-    width: 100rem;
-    max-width: 55%;
-}
-.carousel div div:nth-child(5){
-    /* z-index: 0; */
-    /* background-color: green; */
-    width: 100rem;
-    max-width: 45%;
-}
-.carousel div div:nth-child(6){
-    /* z-index: 0; */
-    /* background-color: blue; */
-    width: 100rem;
-    max-width: 30%;
-}
-.carousel div div:nth-child(7){
-    /* z-index: 0; */
-    /* background-color: blue; */
-    width: 100rem;
-    max-width: 25%;
+
+@media screen and (min-width: 900px){ 
+    .carousel{
+        padding: 5vh 10vw;
+    }
+    .carousel div{
+        height: 70vh;
+    }
+    .carousel div div:nth-child(1){
+        visibility: visible;
+        width: 100rem;
+        max-width: 25%;
+    }
+    .carousel div div:nth-child(2){
+        width: 100rem;
+        max-width: 30%;
+    }
+    .carousel div div:nth-child(3){
+        width: 100rem;
+        max-width: 45%;
+    }
+    .carousel div div:nth-child(4){
+        width: 100rem;
+        max-width: 55%;
+    }
+    .carousel div div:nth-child(5){
+        width: 100rem;
+        max-width: 45%;
+    }
+    .carousel div div:nth-child(6){
+        width: 100rem;
+        max-width: 30%;
+    }
+    .carousel div div:nth-child(7){
+        width: 100rem;
+        max-width: 25%;
+    }
+
 }
