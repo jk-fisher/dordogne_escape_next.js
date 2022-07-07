@@ -22,12 +22,12 @@ const ImageCarousel = ({ images }) => {
 
     console.log('images', images)
 
-    const imageArray = images.map((imageId, index) => {
+    const imageArray = images.slice(1).map((imageId, index) => {
         return {
-            key: index,
+            key: imageId,
             content: <Image className={styles.image} src={`/carouselImages/${imageId}.jpg`} alt={index} width={1000}
             height={1000} onClick={() => setState({ goToSlide: index, offsetRadius: state.offsetRadius })}/>
-        }
+        } 
     })
     imageArray.map((slide, index) => {
       return slide
