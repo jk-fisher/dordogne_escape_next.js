@@ -12,7 +12,8 @@ import ReactMarkdown from 'react-markdown';
 const ReviewItem = (props) => {
     const { openModalHandler } = useContext(ModalContext);
 
-    return ( <li >
+    return ( 
+    // <li >
         <Card>
                 <FaUser /><p className={styles.name}>{props.name}</p>
                 <span className={styles.date}>{props.date}</span>
@@ -26,7 +27,7 @@ const ReviewItem = (props) => {
                     className={styles.reviewsBtn}>Read all reviews</button>
                 <Modal />
         </Card>
-    </li>
+    // </li>
  );
 }
  

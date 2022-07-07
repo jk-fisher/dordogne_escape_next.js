@@ -97,19 +97,19 @@ const ImageCarousel = ({ images }) => {
     })
   }
 
-  useEffect(() => {
-    const viewportResizeHandler = () => {
-      if (window.innerWidth > 900){
-        setState({ offsetRadius: 3})
-      } else {
-        setState({ offsetRadius: 1 })
-      }
-    }
-    viewportResizeHandler();
-    window.addEventListener("resize", viewportResizeHandler);
+  // useEffect(() => {
+  //   const viewportResizeHandler = () => {
+  //     if (window.innerWidth > 900){
+  //       setState({ offsetRadius: 3})
+  //     } else {
+  //       setState({ offsetRadius: 1 })
+  //     }
+  //   }
+  //   viewportResizeHandler();
+  //   window.addEventListener("resize", viewportResizeHandler);
 
-    return () => window.removeEventListener("resize", viewportResizeHandler)
-  }, []);
+  //   return () => window.removeEventListener("resize", viewportResizeHandler)
+  // }, []);
 
   useEffect(() => {
     timer.current = setInterval(() => {

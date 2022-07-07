@@ -37,9 +37,11 @@
 
 .navitem {
     margin-left: 3rem;
+    color: #e5ddd0;
 }
 
 .navlink{
+    letter-spacing: 0.1rem;
     font-size: 0.8rem;
     font-weight: 400;
     color: #e5ddd0;
