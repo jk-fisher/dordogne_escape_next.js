@@ -1,0 +1,95 @@
+.background {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+/* .center {
+    text-align: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+} */
+.scrollText {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Mulish', sans-serif;
+    padding: 3rem  2rem;
+    line-height: 2;
+    color: rgb(49, 49, 49);
+}
+
+.card {
+    position: relative;
+    display: block;
+    margin: 0rem auto;
+    height: auto;
+    width: 100%;
+
+}
+.colBlock {
+    /* background-color: #e6e3d7; */
+    background-color: #e6e3d796;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    right: 0%;
+    top: 0rem;
+    z-index: -1;
+}
+.offsetCard {
+    position: relative;
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Mulish', sans-serif;
+    padding: 3rem 2rem;
+    line-height: 2;
+    margin-bottom: 4rem
+}
+.offsetCard h2 {
+    color: #686868;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+}
+.title {
+    font-size: 2rem;
+    color: #A9A9A9;
+}
+@media screen and (min-width: 768px) {
+    .card {
+        height: 20rem;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* object-fit: contain; */
+    }
+    .parallax {
+        margin-right: 5%;
+    
+    }
+    
+    .sticky {
+        margin-left: 10%;
+        /* background-color: #ff6d6d; */
+    }
+    /* .imgContainer {
+        width:600px;
+    } */
+}
+.lakeImg {
+    background-image: url("../public/carouselImages/img_13.jpg");
+    height: 70vh;
+
+}

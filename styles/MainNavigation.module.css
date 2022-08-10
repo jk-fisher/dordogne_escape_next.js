@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0rem 1rem;
     background-color: #060826;
     height: 5rem;
     position: fixed;
@@ -30,6 +30,7 @@
 }
 
 .navmenu {
+    list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,6 +74,7 @@
         top: 5rem;
         bottom: 0rem;
         flex-direction: column;
+        justify-content: space-evenly;
         background-color: #060826;
         width: 100%;
         text-align: center;
@@ -86,7 +88,8 @@
     }
 
     .navitem {
-        margin: 2.5rem 0;
+        margin-left: 0;
+        font-size: 2rem;
     }
 
     .hamburger {

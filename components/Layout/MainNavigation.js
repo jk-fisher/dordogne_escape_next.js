@@ -12,18 +12,18 @@ const MainNavigation = () => {
         <header className={styles.header}>
         <nav className={styles.navbar}>
             <Link href="/">
-                <a className={styles.navlogo}>Le<br />Petit Cottage</a>
+                <a className={styles.navlogo}  onClick={() => setIsOpen(false)}>Le<br />Petit Cottage</a>
             </Link>
           <ul className={isOpen === false ? 
                 styles.navmenu : styles.navmenu +' '+styles.active}>
             <li className={styles.navitem}>
                 <Link href="/">
-                    <a className={styles.navlink}>Home</a>
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Home</a>
                 </Link>
             </li>
             <li className={styles.navitem}>
                 <Link href="/">
-                    <a className={styles.navlink}>The Cottage</a>
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>The Cottage</a>
                 </Link>
             </li>
             <li className={styles.navitem}>
@@ -35,13 +35,13 @@ const MainNavigation = () => {
             <li className={styles.navitem}>
                 {/* Location */}
                 <Link href="/">
-                    <a className={styles.navlink}>Location</a>
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Location</a>
                     
                 </Link>
             </li>
             <li className={styles.navitem}>
-                <Link href="/">
-                    <a className={styles.navlink}>Local Area</a>
+                <Link href="/localArea">
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Local Area</a>
                     
                 </Link>
             </li>
@@ -53,7 +53,7 @@ const MainNavigation = () => {
             </li>
             <li className={styles.navitem}>
                 <Link href="/">
-                    <a className={styles.navlink}>Contact</a>
+                    <a className={styles.navlink} onClick={() => setIsOpen(false)}>Contact</a>
                     
                 </Link>
             </li>

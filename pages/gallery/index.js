@@ -1,6 +1,5 @@
 import { Fragment } from "react"
 import Head from "next/head"
-import styles from "../../styles/ImageCarousel.module.css"
 import ImageCarousel from "../../components/UI/ImageCarousel"
 import { getSortedImages } from "../../lib/carousel"
 

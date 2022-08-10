@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { v4 as uuidv4 } from "uuid";
 import { config } from "react-spring";
 import Image from "next/image";
 import styles from "../../styles/ImageCarousel.module.css";
