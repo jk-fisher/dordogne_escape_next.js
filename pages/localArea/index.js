@@ -14,7 +14,7 @@ import img_05 from "../../public/carouselImages/img_13.jpg"
 const LocalArea = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' })
     const alignCenter = { display: 'flex', alignItems: 'center' }
-    let stickyPosition = 1;
+    let stickyPosition = 0;
 
     console.log(isTabletOrMobile)
     const intro = "Our neighbourhood is a friendly farming community, where people still have time to stop and talk. Visiting le petit cottage is like stepping back fifty years in time to when life was kinder to us all. Unfortunately there is no public transport passing through the village so you will need your own transport. Please note...this is not a good holiday for anyone keen on discos and nightlife, or who is irritated by birdsong and farmyard noises! We have compiled a list of some of the best attractions nearby and things you might want to do on your visit."
@@ -65,32 +65,36 @@ const LocalArea = () => {
             </li>
         )
     })
-    // const lgScreen = places.map((place, index) => {
-    //     let start = stickyPosition++;
-    //     let end = start + 0.5;
-    //     return (<Fragment>
-    //         <ParallaxLayer sticky={{ start: {start}, end: {end} }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-    //                     <div className={`${styles.card} ${styles.sticky}`}>
-    //                         <Image 
-    //                             src={place.img}
-    //                             alt={place.place}
-    //                             layout="responsive"
-    //                             />
-    //                     </div>
-    //                 </ParallaxLayer>
+    const lgScreen = places.map((place, index) => {
+        const start = stickyPosition++;
+        stickyPosition++;
+        const end = stickyPosition + 1.5;
+        return (<div key={index}>
+                    <ParallaxLayer  sticky={{ start: stickyPosition }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
+                        <div className={`${styles.card} ${styles.sticky}`}>
+                            {/* <Image 
+                                src={place.img}
+                                alt={place.place}
+                                layout="fill"
+                                /> */}
+                                 <p>I'm a sticky layer</p>
+                        </div>
+                    </ParallaxLayer>
 
-    //                 <ParallaxLayer offset={2} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-    //                     <div className={`${styles.card} ${styles.parallax}`}>
-    //                     <h2>Place to visit #0{index + 1}
-    //                         <br />
-    //                         <span className={styles.title}>{place.place}</span>
-    //                     </h2>
-    //                         <p>{place.description}</p>
-    //                     </div>
-    //                 </ParallaxLayer>
-    //     </Fragment>
-    //         )
-    // })
+                    <ParallaxLayer offset={stickyPosition} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
+                        <h2>Place to visit #0{index + 1}
+                            <br />
+                            <span className={styles.title}>{place.place}</span>
+                        </h2>
+                            <p>{place.description}</p>
+                            <span className={styles.colBlock}/>
+
+                        </div>
+                    </ParallaxLayer>
+        </div>
+            )
+    })
     
     return ( <Fragment>
         <Head>
@@ -118,41 +122,84 @@ const LocalArea = () => {
         <Fragment>
 
             <div className={styles.background} /> 
-                <Parallax pages={10} style={{ top: '0', left: '0'}}>
-                <Banner title="Places to explore on your visit" className={styles.lakeImg} h1Style={styles.center}/>
+                <Parallax pages={6} style={{ top: '0', left: '0'}}>
+                    <Banner title="Scroll to explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
 
-
-                    <ParallaxLayer offset={0.8} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
+                     <ParallaxLayer offset={0.95} speed={0.3} style={{ ...alignCenter, justifyContent: 'center' }}>
                     <p className={styles.scrollText}>{intro}</p>
                     </ParallaxLayer>
 
-                    <ParallaxLayer sticky={{ start: 1.8, end: 2.5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
+                {/* {lgScreen} */}
+
+                <ParallaxLayer  sticky={{ start: 1.5, end: 2.5}} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
                         <div className={`${styles.card} ${styles.sticky}`}>
                             <Image 
-                                src={img_01}
-                                alt="Image of Ségur-le-Château"
-                                layout="fill"
+                                src={places[0].img}
+                                alt={places[0].place}
+                                layout="responsive"
+                                />
+                        </div>
+                    </ParallaxLayer>
+                    <ParallaxLayer offset={2} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
+                        <h2>Place to visit #01
+                            <br />
+                            <span className={styles.title}>{places[0].place}</span>
+                        </h2>
+                            <p>{places[0].description}</p>
+                            <span className={styles.colBlock}/>
+
+                        </div>
+                    </ParallaxLayer>
+
+                    <ParallaxLayer  sticky={{ start: 3.5, end: 4.5 }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
+                        <div className={`${styles.card} ${styles.sticky}`}>
+                            <Image 
+                                src={places[1].img}
+                                alt={places[1].place}
+                                layout="responsive"
                                 />
                         </div>
                     </ParallaxLayer>
 
-                    <ParallaxLayer offset={2} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                        <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
-                            <p>I'm not</p>
-                        </div>
-                    </ParallaxLayer>
+                    <ParallaxLayer offset={4} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
+                        <h2>Place to visit #01
+                            <br />
+                            <span className={styles.title}>{places[1].place}</span>
+                        </h2>
+                            <p>{places[1].description}</p>
+                            <span className={styles.colBlock}/>
 
-                    <ParallaxLayer sticky={{ start: 3, end: 4 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-                        <div className={`${styles.card} ${styles.sticky}`}>
-                            <p>I'm a sticky layer</p>
                         </div>
                     </ParallaxLayer>
+            {/* <ParallaxLayer sticky={{ start: 1.8, end: 2.5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
+                <div className={`${styles.card} ${styles.sticky}`}>
+                    <Image 
+                        src={img_01}
+                        alt="Image of Ségur-le-Château"
+                        layout="fill"
+                        />
+                </div>
+            </ParallaxLayer>
 
-                    <ParallaxLayer offset={3.5} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                        <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
-                            <p>I'm not</p>
-                        </div>
-                    </ParallaxLayer>
+            <ParallaxLayer offset={2} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
+                    <p>I'm not</p>
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer sticky={{ start: 3, end: 4 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
+                <div className={`${styles.card} ${styles.sticky}`}>
+                    <p>I'm a sticky layer</p>
+                </div>
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={3.5} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
+                    <p>I'm not</p>
+                </div>
+            </ParallaxLayer> */}
                 </Parallax> 
             </Fragment>}
 

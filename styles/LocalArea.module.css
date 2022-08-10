@@ -6,13 +6,21 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow-y: hidden;
 }
-/* .center {
+.lakeImg {
+    background-image: url("../public/carouselImages/img_13b.jpg");
+    height: 100vh;
+    background-position: 90%;
+}
+.center {
     text-align: center;
     top: 70%;
     left: 50%;
     transform: translate(-50%, -70%);
-} */
+    width: 70%;
+    font-size: 3.8rem;
+}
 .scrollText {
     font-size: 1.2rem;
     width: 100%;
@@ -40,8 +48,8 @@
     position: absolute;
     bottom: 0;
     width: 75%;
-    right: 0%;
-    top: 0rem;
+    right: 0;
+    top: 0;
     z-index: -1;
 }
 .offsetCard {
@@ -55,7 +63,8 @@
     font-family: 'Mulish', sans-serif;
     padding: 3rem 2rem;
     line-height: 2;
-    margin-bottom: 4rem
+    margin-bottom: 4rem;
+    z-index: 9;
 }
 .offsetCard h2 {
     color: #686868;
@@ -67,29 +76,44 @@
     color: #A9A9A9;
 }
 @media screen and (min-width: 768px) {
+    .offsetCard {
+        width: 45%;
+        /* max-width: 450px; */
+    }
     .card {
-        height: 20rem;
+        position: relative;
+        display: block;
+        margin: auto;
+        /* height: ; */
+        width: 90%;
+        /* max-width: 450px; */
+        margin: auto;
+        background-color: #5b65ad;
+        z-index: 1;
+        /* height: 20rem;
         width: 40%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        /* object-fit: contain; */
+        align-items: center; */
+        object-fit: contain;
     }
+
     .parallax {
-        margin-right: 5%;
-    
+        margin-right: 10%;
+        background-color: white;
+
     }
     
     .sticky {
-        margin-left: 10%;
+        margin-left: 5%;
         /* background-color: #ff6d6d; */
     }
     /* .imgContainer {
         width:600px;
     } */
 }
-.lakeImg {
-    background-image: url("../public/carouselImages/img_13.jpg");
-    height: 70vh;
-
+@media screen and (min-width: 1200px) {
+    .card {
+        width: 50%;
+    }
 }
