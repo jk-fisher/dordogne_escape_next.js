@@ -12,6 +12,7 @@ import Location from "../components/Location/Location";
 
 import { getSortedReviewsData } from "../lib/reviews";
 import { Fragment } from "react";
+import Footer from "../components/Layout/Footer";
 
 const getStaticProps = async () => {
     const allReviewsData = getSortedReviewsData();
@@ -59,7 +60,6 @@ const Home = ({ allReviewsData }) => {
             </ModalContext.Provider>
             
             <Location />
-
         </Fragment>
 
      );

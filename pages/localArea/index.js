@@ -10,11 +10,12 @@ import img_02 from "../../public/carouselImages/img_29.jpg"
 import img_03 from "../../public/carouselImages/img_10.jpg"
 import img_04 from "../../public/carouselImages/img_11.jpg"
 import img_05 from "../../public/carouselImages/img_13.jpg"
+import Footer from "../../components/Layout/Footer";
 
 const LocalArea = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' })
     const alignCenter = { display: 'flex', alignItems: 'center' }
-    let stickyPosition = 0;
+    let stickyPosition = 1.5;
 
     console.log(isTabletOrMobile)
     const intro = "Our neighbourhood is a friendly farming community, where people still have time to stop and talk. Visiting le petit cottage is like stepping back fifty years in time to when life was kinder to us all. Unfortunately there is no public transport passing through the village so you will need your own transport. Please note...this is not a good holiday for anyone keen on discos and nightlife, or who is irritated by birdsong and farmyard noises! We have compiled a list of some of the best attractions nearby and things you might want to do on your visit."
@@ -41,7 +42,7 @@ const LocalArea = () => {
             img: img_04
         },
         {
-            place: "Walk or explore bike trails in the woods",
+            place: "Walk or explore bike trails",
             description: "Whether you want a leisurely cycle before lunch or a 100km bike ride to really give your muscles a workout, with hundreds of kilometers of cycle tracks to explore often you don't see another soul...",
             img: img_05
         }
@@ -66,22 +67,24 @@ const LocalArea = () => {
         )
     })
     const lgScreen = places.map((place, index) => {
-        const start = stickyPosition++;
-        stickyPosition++;
-        const end = stickyPosition + 1.5;
-        return (<div key={index}>
-                    <ParallaxLayer  sticky={{ start: stickyPosition }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-                        <div className={`${styles.card} ${styles.sticky}`}>
-                            {/* <Image 
+        const start = stickyPosition;
+        const end = stickyPosition + 1;
+        stickyPosition += 2.5;
+        const offset = start + 0.5;
+        return (<Fragment>
+                    <ParallaxLayer  key={index} sticky={{ start: start, end: end }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
+                        <div className={`${styles.card} ${styles.sticky} ${styles.unsetImg}`}>
+                            <Image 
+                                className={styles.customImg}
                                 src={place.img}
                                 alt={place.place}
                                 layout="fill"
-                                /> */}
+                                />
                                  <p>I'm a sticky layer</p>
                         </div>
                     </ParallaxLayer>
 
-                    <ParallaxLayer offset={stickyPosition} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                    <ParallaxLayer key={index}offset={offset} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
                         <div className={`${styles.offsetCard} ${styles.parallax}`}>
                         <h2>Place to visit #0{index + 1}
                             <br />
@@ -92,7 +95,7 @@ const LocalArea = () => {
 
                         </div>
                     </ParallaxLayer>
-        </div>
+        </Fragment>
             )
     })
     
@@ -110,7 +113,7 @@ const LocalArea = () => {
                 content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
             />
         </Head>
-        {!isTabletOrMobile ? 
+        {/* {!isTabletOrMobile ? 
         <Fragment>
             <Banner title="Places to explore on your visit" className={styles.lakeImg} h1Style={styles.center}/>
             <div data-aos="fade-up">
@@ -118,25 +121,25 @@ const LocalArea = () => {
             </div>
             {smallScreen} 
         </Fragment>
-        : 
-        <Fragment>
+        :  */}
+        <div >
 
             <div className={styles.background} /> 
-                <Parallax pages={6} style={{ top: '0', left: '0'}}>
-                    <Banner title="Scroll to explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
-
-                     <ParallaxLayer offset={0.95} speed={0.3} style={{ ...alignCenter, justifyContent: 'center' }}>
+                <Parallax pages={14} style={{ top: '0', left: '0'}} className={styles.container}>
+                    <Banner title="Explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
                     <p className={styles.scrollText}>{intro}</p>
-                    </ParallaxLayer>
+                    
+                     {/* <ParallaxLayer offset={1} speed={0.3} style={{ ...alignCenter, justifyContent: 'center' }}> */}
+                    {/* </ParallaxLayer> */}
 
-                {/* {lgScreen} */}
+                {lgScreen}
 
-                <ParallaxLayer  sticky={{ start: 1.5, end: 2.5}} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.sticky}`}>
+                    {/* <ParallaxLayer  sticky={{ start: 1.5, end: 2.5}} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
+                        <div className={`${styles.card} ${styles.sticky}  ${styles.unsetImg}`}>
                             <Image 
                                 src={places[0].img}
                                 alt={places[0].place}
-                                layout="responsive"
+                                layout="fill"
                                 />
                         </div>
                     </ParallaxLayer>
@@ -150,21 +153,22 @@ const LocalArea = () => {
                             <span className={styles.colBlock}/>
 
                         </div>
-                    </ParallaxLayer>
+                    </ParallaxLayer> 
 
-                    <ParallaxLayer  sticky={{ start: 3.5, end: 4.5 }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.sticky}`}>
+                    <ParallaxLayer  sticky={{ start: 4, end: 5 }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
+                        <div className={`${styles.card} ${styles.sticky} ${styles.unsetImg}`}>
                             <Image 
+                                className={styles.customImg}
                                 src={places[1].img}
                                 alt={places[1].place}
-                                layout="responsive"
+                                layout="fill"
                                 />
                         </div>
                     </ParallaxLayer>
 
-                    <ParallaxLayer offset={4} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
+                    <ParallaxLayer offset={4.5} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
                         <div className={`${styles.offsetCard} ${styles.parallax}`}>
-                        <h2>Place to visit #01
+                        <h2>Place to visit #02
                             <br />
                             <span className={styles.title}>{places[1].place}</span>
                         </h2>
@@ -172,7 +176,7 @@ const LocalArea = () => {
                             <span className={styles.colBlock}/>
 
                         </div>
-                    </ParallaxLayer>
+                    </ParallaxLayer> */}
             {/* <ParallaxLayer sticky={{ start: 1.8, end: 2.5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
                 <div className={`${styles.card} ${styles.sticky}`}>
                     <Image 
@@ -200,8 +204,9 @@ const LocalArea = () => {
                     <p>I'm not</p>
                 </div>
             </ParallaxLayer> */}
+                {/* <Footer className={styles.absolute}/> */}
                 </Parallax> 
-            </Fragment>}
+            </div>
 
     </Fragment> );
 }

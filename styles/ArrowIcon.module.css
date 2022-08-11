@@ -1,0 +1,13 @@
+.icon {
+    display: flex; 
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 5rem;
+    /* z-index: 9; */
+    align-items: center;
+    width: 100%;
+    /* position: absolute; */
+        /* bottom: 5%;
+    left: 3rem;
+    bottom: 3rem; */
+}

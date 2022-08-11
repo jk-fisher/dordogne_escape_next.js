@@ -6,7 +6,26 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
+    /* overflow-x: hidden; */
+}
+.container {
+    margin-top: 5rem;
+}
+.customImg {
+    
+    object-fit: cover;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+    top: 5rem;
+    /* margin-top: 1rem !important; */
+}
+
+.unsetImg {
+    width: 100%;
+}
+.unsetImg > div {
+    position: unset !important;
 }
 .lakeImg {
     background-image: url("../public/carouselImages/img_13b.jpg");
@@ -19,7 +38,7 @@
     left: 50%;
     transform: translate(-50%, -70%);
     width: 70%;
-    font-size: 3.8rem;
+    /* font-size: 3.8rem; */
 }
 .scrollText {
     font-size: 1.2rem;
@@ -34,11 +53,12 @@
 }
 
 .card {
-    position: relative;
     display: block;
+    margin-top: 5rem;
+    /* position: relative;
     margin: 0rem auto;
     height: auto;
-    width: 100%;
+    width: 100%; */
 
 }
 .colBlock {
@@ -59,12 +79,12 @@
     height: auto;
     width: 100%;
     max-width: 600px;
-    margin: auto;
     font-family: 'Mulish', sans-serif;
     padding: 3rem 2rem;
     line-height: 2;
     margin-bottom: 4rem;
     z-index: 9;
+    background-color: white;
 }
 .offsetCard h2 {
     color: #686868;
@@ -75,37 +95,42 @@
     font-size: 2rem;
     color: #A9A9A9;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     .offsetCard {
         width: 45%;
         /* max-width: 450px; */
     }
-    .card {
+    .unsetImg > span {
+        max-width: 60%;
+        height: auto;
+    }
+    /* .card {
+        object-fit: contain;
         position: relative;
         display: block;
         margin: auto;
-        /* height: ; */
         width: 90%;
-        /* max-width: 450px; */
         margin: auto;
         background-color: #5b65ad;
-        z-index: 1;
+        z-index: 1; */
+
+        /* height: ; */
+        /* max-width: 450px; */
         /* height: 20rem;
         width: 40%;
         display: flex;
         justify-content: center;
         align-items: center; */
-        object-fit: contain;
-    }
+    /* } */
 
     .parallax {
         margin-right: 10%;
-        background-color: white;
+        /* background-color: white; */
 
     }
     
     .sticky {
-        margin-left: 5%;
+        margin-left: 15%;
         /* background-color: #ff6d6d; */
     }
     /* .imgContainer {
