@@ -6,7 +6,7 @@ import CalendarDaysItem from "./CalendarDayItem";
 
 const CalendarDaysList = () => {
 
-    const { myDate, visibleDates, firstDayIndex, lastDayIndex } = useContext(CalendarContext);
+    const { myDate, visibleDates, firstDayIndex, lastDayIndex, selectDatesHandler } = useContext(CalendarContext);
 
 
     const today = new Date();
@@ -16,10 +16,7 @@ const CalendarDaysList = () => {
     const currentClassName = `${styles.day}`;
     const nextClassName = `${styles.day} ${styles.nextDate}`;
 
-    const selectDatesHandler = (e) => {
-        console.log(e.currentTarget.dataset.id)
-        
-    }
+
 
     const days = visibleDates.map((day, index) => {
         // console.log(day, index, firstDayIndex)

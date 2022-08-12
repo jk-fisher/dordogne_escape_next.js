@@ -46,12 +46,14 @@ export default () => {
     };
 
     const createDateObjectHandler = (indexOfDay) => {
-        let dayOfMonth = (indexOfDay + 1) - firstDayIndex;
+        let dayOfMonth = (parseInt(indexOfDay) + 1) - firstDayIndex;
         let month = myDate.getMonth();
         let year = myDate.getFullYear();
+        console.log('MONTH', month, 'myDate', myDate, 'LASTDATE', lastDate); 
         if(dayOfMonth > lastDate){
             month++;
-            dayOfMonth = dayOfMonth - (lastDate); 
+            dayOfMonth = dayOfMonth - lastDate;
+            console.log('MONTH', month, 'DAY', dayOfMonth); 
             if(month > 11){
                 year++
                 month = month - 12
@@ -68,26 +70,47 @@ export default () => {
         return dateObject;
     };
 
-    const selectDaysHandler = (dateId) => {
-        setSelectedDateCounter(selectedDateCounter++);
-        const newDateObject = createDateObjectHandler(dateId);
+    const selectDatesHandler = (e) => {
+        console.log(e.currentTarget.dataset.id)
+        const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id)
+        const dateId = e.currentTarget.dataset.id;
+        console.log('DATE', newDateObject)
         if(selectedDateCounter === 1 && !firstDateSelected){
-            setFirstDateSelected(newDateObject);
-            setFirstIndexSelected(dateId);
-        }else if(selectedDateCounter === 2 && firstDateSelected < newDateObject){
-            setSecondDateSelected(newDateObject);
-            setSecondIndexSelected(dateId);
-            // renderUIDates();
-        } else {
-            setFirstDateSelected(newDateObject);
-            setFirstIndexSelected(dateId);
-            setSecondDateSelected(null);
-            setSecondIndexSelected(null);
-            setSelectedDateCounter(1);
-            //setClicked + clickedRange to null 
-        }
-        highlightDaysHandler();
+                    setFirstDateSelected(newDateObject);
+                    setFirstIndexSelected(dateId);
+                }else if(selectedDateCounter === 2 && firstDateSelected < newDateObject){
+                    setSecondDateSelected(newDateObject);
+                    setSecondIndexSelected(dateId);
+                    renderUIDates();
+                } else {
+                    setFirstDateSelected(newDateObject);
+                    setFirstIndexSelected(dateId);
+                    setSecondDateSelected(null);
+                    setSecondIndexSelected(null);
+                    setSelectedDateCounter(1);
+                    // setClicked + clickedRange to null
+                } 
     }
+    // const selectDaysHandler = (dateId) => {
+    //     setSelectedDateCounter(selectedDateCounter++);
+    //     const newDateObject = createDateObjectHandler(dateId);
+    //     if(selectedDateCounter === 1 && !firstDateSelected){
+    //         setFirstDateSelected(newDateObject);
+    //         setFirstIndexSelected(dateId);
+    //     }else if(selectedDateCounter === 2 && firstDateSelected < newDateObject){
+    //         setSecondDateSelected(newDateObject);
+    //         setSecondIndexSelected(dateId);
+    //         // renderUIDates();
+    //     } else {
+    //         setFirstDateSelected(newDateObject);
+    //         setFirstIndexSelected(dateId);
+    //         setSecondDateSelected(null);
+    //         setSecondIndexSelected(null);
+    //         setSelectedDateCounter(1);
+    //         //setClicked + clickedRange to null 
+    //     }
+    //     highlightDaysHandler();
+    // }
 
     const highlightDaysHandler = (e) => {
         // console.log(e, 'dateClicked')
@@ -217,6 +240,7 @@ export default () => {
         nextMonthHandler, 
         prevMonthHandler, 
         nextYearHandler, 
-        prevYearHandler
+        prevYearHandler,
+        selectDatesHandler
          }
 }
