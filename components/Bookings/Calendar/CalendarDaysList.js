@@ -19,7 +19,7 @@ const CalendarDaysList = () => {
 
 
     const days = visibleDates.map((day, index) => {
-        // console.log(day, index, firstDayIndex)
+        // console.log('DAY', day,'INDEX', index)
         if(index < firstDayIndex){
             console.log('prev day')
             return <CalendarDaysItem

@@ -10,7 +10,10 @@ const CalendarContext = React.createContext({
     firstDayIndex: null,
     lastDayIndex: null,
     prevMonthArrowVisible: false,
-    prevYearArrowVisible: false
+    prevYearArrowVisible: false,
+    UIDates: false,
+    firstDateSelected: null,
+    secondDateSelected: null
 }); 
 
 export default CalendarContext;

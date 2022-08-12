@@ -14,8 +14,8 @@ const Bookings = () => {
     return ( <section className={styles.bookingsWrapper}>
         <CalendarContext.Provider value={{ myDate, nextMonthHandler, nextYearHandler, prevMonthHandler, prevYearHandler, prevMonthArrowVisible, prevYearArrowVisible, visibleDates, firstDayIndex, lastDayIndex, selectDatesHandler }}>
             <Calendar />
-        </CalendarContext.Provider>
         <PriceInfo />
+        </CalendarContext.Provider>
     </section> );
 }
  
