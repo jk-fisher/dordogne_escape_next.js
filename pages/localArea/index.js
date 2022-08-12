@@ -1,22 +1,18 @@
 import { Fragment } from "react"
 import Head from "next/head"
-import { useMediaQuery } from 'react-responsive';
 
+import ExploreBanner from "../../components/UI/ExploreBanner"
 import { Parallax } from 'react-scroll-parallax';
 
 import styles from '../../styles/LocalArea.module.css'
-import Banner from "../../components/UI/Banner"
 import Image from "next/image";
 import img_01 from "../../public/carouselImages/img_25.jpg"
 import img_02 from "../../public/carouselImages/img_29.jpg"
 import img_03 from "../../public/carouselImages/img_10.jpg"
 import img_04 from "../../public/carouselImages/img_11.jpg"
 import img_05 from "../../public/carouselImages/img_13.jpg"
-import Footer from "../../components/Layout/Footer";
 
 const LocalArea = () => {
-    // const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' })
-    const alignCenter = { display: 'flex', alignItems: 'center' }
 
     const intro = "Our neighbourhood is a friendly farming community, where people still have time to stop and talk. Visiting le petit cottage is like stepping back fifty years in time to when life was kinder to us all. Unfortunately there is no public transport passing through the village so you will need your own transport. Please note...this is not a good holiday for anyone keen on discos and nightlife, or who is irritated by birdsong and farmyard noises! We have compiled a list of some of the best attractions nearby and things you might want to do on your visit."
     
@@ -47,30 +43,8 @@ const LocalArea = () => {
             img: img_05
         }
     ]
-    // const smallScreen = places.map((place, index) => {
-    //     return (
-    //         <li key={index}>
-    //             <div className={styles.card} data-aos="fade-up">
-    //                 <Image
-    //                 src={place.img}
-    //                 alt={place.place}
-    //                 layout="responsive" />
-    //             </div>
-    //             <div className={styles.offsetCard} data-aos="fade-up">
-    //                 <h2>Place to visit #0{index + 1}
-    //                 <br />
-    //                 <span className={styles.title}>{place.place}</span></h2>
-    //                 <p>{place.description}</p>
-    //                 <span className={styles.colBlock}/>
-    //             </div>
-    //         </li>
-    //     )
-    // })
-    const lgScreen = places.map((place, index) => {
-        // const start = stickyPosition;
-        // const end = stickyPosition + 1;
-        // stickyPosition += 2.5;
-        // const offset = start + 0.5;
+
+    const parallaxList = places.map((place, index) => {
         return (<li key={index} className={styles.objectWrapper}>
                     <Parallax style={{ zIndex: '-1' }}>
                         <div className={`${styles.card} ${styles.unsetImg}`}>
@@ -82,7 +56,6 @@ const LocalArea = () => {
                                 sizes="(min-width: 48em) 50vw,
                                         100vw"
                                 />
-                                 {/* <p>I'm a sticky layer</p> */}
                         </div>
                     </Parallax>
                     <Parallax translateY={[0, -170]} className={`${styles.offsetCard} `}>
@@ -114,24 +87,13 @@ const LocalArea = () => {
                 content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
             />
         </Head>
-        {/* {!isTabletOrMobile ? 
-        <Fragment>
-            <Banner title="Places to explore on your visit" className={styles.lakeImg} h1Style={styles.center}/>
-            <div data-aos="fade-up">
-                <p className={styles.scrollText}>{intro}</p>
-            </div>
-            {smallScreen} 
-        </Fragment>
-        :  */}
         <div >
-                <Banner title="Explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
-                <p className={styles.scrollText}>{intro}</p>
+            <ExploreBanner title="Explore places to visit on your trip"/>
+            <div data-aos="fade-up">
+                <p className={styles.scrollText} >{intro}</p>
+            </div>
             <ul className={styles.container}>
-
-
-                {lgScreen}
-
-
+                {parallaxList}
             </ul> 
         </div>
 

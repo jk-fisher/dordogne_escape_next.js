@@ -19,46 +19,20 @@
    margin-top: 5rem;;
 }
 .customImg {
-    
     object-fit: cover;
-    /* width: 100% !important;
-    position: relative !important;
-    height: unset !important;
-    top: 5rem;
-    margin-top: 1rem !important; */
 }
 
-/* .unsetImg {
-    width: 100%;
-}
-.unsetImg > div {
-    position: unset !important;
-} */
-.lakeImg {
-    background-image: url("../public/carouselImages/img_13b.jpg");
-    height: 100vh;
-    background-position: 90%;
-}
-.center {
-    text-align: center;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 70%;
-    /* font-size: 3.8rem; */
-}
 .scrollText {
     font-size: 1.2rem;
     width: 100%;
     max-width: 900px;
     text-align: center;
-    margin: auto;
+    margin: 3rem auto;
     font-family: 'Mulish', sans-serif;
     padding: 3rem  2rem;
     line-height: 2;
     color: rgb(49, 49, 49);
 }
-
 
 .colBlock {
     background-color: #e6e3d7;
@@ -131,25 +105,6 @@
     
     .card {
         margin: 3rem 0;
-        /* object-fit: contain;
-        position: relative;
-        display: block;
-        margin: auto;
-        width: 60%;
-        margin: auto;
-        background-color: #5b65ad;
-        z-index: 1; */
     }
-        /* height: ; */
-        /* max-width: 450px; */
-        /* height: 20rem;
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center; */
-    /* } */
 
-    /* .imgContainer {
-        width:600px;
-    } */
 }

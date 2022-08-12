@@ -1,6 +1,5 @@
 import styles from '../../styles/ArrowIcon.module.css'
-import { motion, useScroll, AnimatePresence } from "framer-motion"
-import { useState, useEffect, useRef } from "react"
+import { motion } from "framer-motion"
 
 const bounceTransition = {
     y: {
@@ -10,29 +9,21 @@ const bounceTransition = {
     }
 }
 const ArrowIcon = () => {
-
-
     return ( 
-        <div className={`${styles.icon}`}>
-            <AnimatePresence>
-                {showArrow && (
-                <motion.svg 
-                    className={`${styles.object}`} 
-                    transition={bounceTransition}
-                    animate={{
-                        y: ["40%", "-10%"],
-                    }}
-                    exit={{ opacity: 0.3 }}
-                    width="44" 
-                    height="30" 
-                    viewBox="0 0 44 30" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path id="Vector 3" d="M22 16L0 0L22 29.5L44 0L22 16Z" fill="#39778B"/>
-                </motion.svg>
-                )}
-
-            </AnimatePresence>
+        <div className={styles.icon}>
+            
+            <motion.svg 
+                transition={bounceTransition}
+                animate={{
+                    y: ["40%", "-10%"]
+                }}
+                width="44" 
+                height="30" 
+                viewBox="0 0 44 30" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16L0 0L22 29.5L44 0L22 16Z" fill="rgba(255, 255, 255, 0.807)"/>
+            </motion.svg>
 
         </div>
 
