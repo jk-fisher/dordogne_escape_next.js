@@ -6,13 +6,17 @@
 
 .card {
     display: block;
-    margin-top: 5rem;
     position: relative;
     margin: 0rem auto;
     height: 100vh;
     width: 100%;
     object-fit: cover !important;
     
+}
+
+.objectWrapper {
+   position:relative;
+   margin-top: 5rem;;
 }
 .customImg {
     
@@ -67,22 +71,25 @@
     z-index: -1;
 }
 .offsetCard {
-    position: relative;
+    position: absolute;
     display: block;
     margin: auto;
     height: auto;
     width: 100%;
     max-width: 600px;
     font-family: 'Mulish', sans-serif;
-    padding: 3rem;
+    padding: 2rem;
     line-height: 2;
-    margin-bottom: 0rem;
     z-index: 9;
+    bottom: 0;
+    right: 0;
     /* background-color: white; */
 }
+
 .white {
     background-color: white;
-    padding: 2rem;
+    padding: 1rem;
+    min-height: 350px;
 }
 .offsetCard h2 {
     color: #686868;
@@ -93,6 +100,18 @@
     font-size: 2rem;
     color: #A9A9A9;
 }
+@media screen and (min-width: 768px) {
+    .card {
+        /* width: 90%; */
+    }
+    .offsetCard {
+        right: 10%;
+        padding: 3rem;
+    }
+    .white {
+        padding: 2rem;
+    }
+}
 @media screen and (min-width: 1024px) {
     .unsetImg > span {
         /* max-width: 60%; */
@@ -102,8 +121,14 @@
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin: 3rem;
+        /* margin: 6rem; */
+        margin-left: 10%;    }
+    .offsetCard {
+        position: relative;
+        margin-left: -30%;
+        margin-bottom: -3rem;
     }
+    
     .card {
         margin: 3rem 0;
         /* object-fit: contain;

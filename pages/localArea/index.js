@@ -85,7 +85,7 @@ const LocalArea = () => {
                                  {/* <p>I'm a sticky layer</p> */}
                         </div>
                     </Parallax>
-                    <Parallax translateY={[0, -150]} className={`${styles.offsetCard} `}>
+                    <Parallax translateY={[0, -170]} className={`${styles.offsetCard} `}>
                         <div className={styles.white}>
                             <h2>Place to visit #0{index + 1}
                                 <br />
