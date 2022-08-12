@@ -1,7 +1,9 @@
 import { Fragment } from "react"
 import Head from "next/head"
 import { useMediaQuery } from 'react-responsive';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+
+import { Parallax } from 'react-scroll-parallax';
+
 import styles from '../../styles/LocalArea.module.css'
 import Banner from "../../components/UI/Banner"
 import Image from "next/image";
@@ -13,11 +15,9 @@ import img_05 from "../../public/carouselImages/img_13.jpg"
 import Footer from "../../components/Layout/Footer";
 
 const LocalArea = () => {
-    const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' })
+    // const isTabletOrMobile = useMediaQuery({ query: '(min-width: 768px)' })
     const alignCenter = { display: 'flex', alignItems: 'center' }
-    let stickyPosition = 1.5;
 
-    console.log(isTabletOrMobile)
     const intro = "Our neighbourhood is a friendly farming community, where people still have time to stop and talk. Visiting le petit cottage is like stepping back fifty years in time to when life was kinder to us all. Unfortunately there is no public transport passing through the village so you will need your own transport. Please note...this is not a good holiday for anyone keen on discos and nightlife, or who is irritated by birdsong and farmyard noises! We have compiled a list of some of the best attractions nearby and things you might want to do on your visit."
     
     const places = [
@@ -47,55 +47,56 @@ const LocalArea = () => {
             img: img_05
         }
     ]
-    const smallScreen = places.map((place, index) => {
-        return (
-            <li key={index}>
-                <div className={styles.card} data-aos="fade-up">
-                    <Image
-                    src={place.img}
-                    alt={place.place}
-                    layout="responsive" />
-                </div>
-                <div className={styles.offsetCard} data-aos="fade-up">
-                    <h2>Place to visit #0{index + 1}
-                    <br />
-                    <span className={styles.title}>{place.place}</span></h2>
-                    <p>{place.description}</p>
-                    <span className={styles.colBlock}/>
-                </div>
-            </li>
-        )
-    })
+    // const smallScreen = places.map((place, index) => {
+    //     return (
+    //         <li key={index}>
+    //             <div className={styles.card} data-aos="fade-up">
+    //                 <Image
+    //                 src={place.img}
+    //                 alt={place.place}
+    //                 layout="responsive" />
+    //             </div>
+    //             <div className={styles.offsetCard} data-aos="fade-up">
+    //                 <h2>Place to visit #0{index + 1}
+    //                 <br />
+    //                 <span className={styles.title}>{place.place}</span></h2>
+    //                 <p>{place.description}</p>
+    //                 <span className={styles.colBlock}/>
+    //             </div>
+    //         </li>
+    //     )
+    // })
     const lgScreen = places.map((place, index) => {
-        const start = stickyPosition;
-        const end = stickyPosition + 1;
-        stickyPosition += 2.5;
-        const offset = start + 0.5;
-        return (<Fragment>
-                    <ParallaxLayer  key={index} sticky={{ start: start, end: end }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.sticky} ${styles.unsetImg}`}>
+        // const start = stickyPosition;
+        // const end = stickyPosition + 1;
+        // stickyPosition += 2.5;
+        // const offset = start + 0.5;
+        return (<li key={index} className={styles.objectWrapper}>
+                    <Parallax style={{ zIndex: '-1' }}>
+                        <div className={`${styles.card} ${styles.unsetImg}`}>
                             <Image 
                                 className={styles.customImg}
                                 src={place.img}
                                 alt={place.place}
                                 layout="fill"
+                                sizes="(min-width: 48em) 50vw,
+                                        100vw"
                                 />
-                                 <p>I'm a sticky layer</p>
+                                 {/* <p>I'm a sticky layer</p> */}
                         </div>
-                    </ParallaxLayer>
-
-                    <ParallaxLayer key={index}offset={offset} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
-                        <h2>Place to visit #0{index + 1}
-                            <br />
-                            <span className={styles.title}>{place.place}</span>
-                        </h2>
-                            <p>{place.description}</p>
-                            <span className={styles.colBlock}/>
-
+                    </Parallax>
+                    <Parallax translateY={[0, -150]} className={`${styles.offsetCard} `}>
+                        <div className={styles.white}>
+                            <h2>Place to visit #0{index + 1}
+                                <br />
+                                <span className={styles.title}>{place.place}</span>
+                            </h2>
+                                <p>{place.description}</p>
                         </div>
-                    </ParallaxLayer>
-        </Fragment>
+                        <span className={styles.colBlock}/>
+
+                    </Parallax>
+        </li>
             )
     })
     
@@ -123,90 +124,16 @@ const LocalArea = () => {
         </Fragment>
         :  */}
         <div >
+                <Banner title="Explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
+                <p className={styles.scrollText}>{intro}</p>
+            <ul className={styles.container}>
 
-            <div className={styles.background} /> 
-                <Parallax pages={14} style={{ top: '0', left: '0'}} className={styles.container}>
-                    <Banner title="Explore places to visit on your trip" className={styles.lakeImg} h1Style={styles.center}/>
-                    <p className={styles.scrollText}>{intro}</p>
-                    
-                     {/* <ParallaxLayer offset={1} speed={0.3} style={{ ...alignCenter, justifyContent: 'center' }}> */}
-                    {/* </ParallaxLayer> */}
 
                 {lgScreen}
 
-                    {/* <ParallaxLayer  sticky={{ start: 1.5, end: 2.5}} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.sticky}  ${styles.unsetImg}`}>
-                            <Image 
-                                src={places[0].img}
-                                alt={places[0].place}
-                                layout="fill"
-                                />
-                        </div>
-                    </ParallaxLayer>
-                    <ParallaxLayer offset={2} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
-                        <h2>Place to visit #01
-                            <br />
-                            <span className={styles.title}>{places[0].place}</span>
-                        </h2>
-                            <p>{places[0].description}</p>
-                            <span className={styles.colBlock}/>
 
-                        </div>
-                    </ParallaxLayer> 
-
-                    <ParallaxLayer  sticky={{ start: 4, end: 5 }} style={{ ...alignCenter, justifyContent: 'flex-start', zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.sticky} ${styles.unsetImg}`}>
-                            <Image 
-                                className={styles.customImg}
-                                src={places[1].img}
-                                alt={places[1].place}
-                                layout="fill"
-                                />
-                        </div>
-                    </ParallaxLayer>
-
-                    <ParallaxLayer offset={4.5} speed={1.1} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                        <div className={`${styles.offsetCard} ${styles.parallax}`}>
-                        <h2>Place to visit #02
-                            <br />
-                            <span className={styles.title}>{places[1].place}</span>
-                        </h2>
-                            <p>{places[1].description}</p>
-                            <span className={styles.colBlock}/>
-
-                        </div>
-                    </ParallaxLayer> */}
-            {/* <ParallaxLayer sticky={{ start: 1.8, end: 2.5 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-                <div className={`${styles.card} ${styles.sticky}`}>
-                    <Image 
-                        src={img_01}
-                        alt="Image of Ségur-le-Château"
-                        layout="fill"
-                        />
-                </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer offset={2} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
-                    <p>I'm not</p>
-                </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer sticky={{ start: 3, end: 4 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>
-                <div className={`${styles.card} ${styles.sticky}`}>
-                    <p>I'm a sticky layer</p>
-                </div>
-            </ParallaxLayer>
-
-            <ParallaxLayer offset={3.5} speed={1.2} style={{ ...alignCenter, justifyContent: 'flex-end' }}>
-                <div className={`${styles.card} ${styles.parallax} ${styles.purple}`}>
-                    <p>I'm not</p>
-                </div>
-            </ParallaxLayer> */}
-                {/* <Footer className={styles.absolute}/> */}
-                </Parallax> 
-            </div>
+            </ul> 
+        </div>
 
     </Fragment> );
 }

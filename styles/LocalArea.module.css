@@ -1,32 +1,35 @@
-.background {
-    position: relative;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    /* overflow-x: hidden; */
-}
+
 .container {
+    position: relative;
     margin-top: 5rem;
+}
+
+.card {
+    display: block;
+    margin-top: 5rem;
+    position: relative;
+    margin: 0rem auto;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover !important;
+    
 }
 .customImg {
     
     object-fit: cover;
-    width: 100% !important;
+    /* width: 100% !important;
     position: relative !important;
     height: unset !important;
     top: 5rem;
-    /* margin-top: 1rem !important; */
+    margin-top: 1rem !important; */
 }
 
-.unsetImg {
+/* .unsetImg {
     width: 100%;
 }
 .unsetImg > div {
     position: unset !important;
-}
+} */
 .lakeImg {
     background-image: url("../public/carouselImages/img_13b.jpg");
     height: 100vh;
@@ -52,18 +55,9 @@
     color: rgb(49, 49, 49);
 }
 
-.card {
-    display: block;
-    margin-top: 5rem;
-    /* position: relative;
-    margin: 0rem auto;
-    height: auto;
-    width: 100%; */
 
-}
 .colBlock {
-    /* background-color: #e6e3d7; */
-    background-color: #e6e3d796;
+    background-color: #e6e3d7;
     content: '';
     position: absolute;
     bottom: 0;
@@ -80,11 +74,15 @@
     width: 100%;
     max-width: 600px;
     font-family: 'Mulish', sans-serif;
-    padding: 3rem 2rem;
+    padding: 3rem;
     line-height: 2;
-    margin-bottom: 4rem;
+    margin-bottom: 0rem;
     z-index: 9;
+    /* background-color: white; */
+}
+.white {
     background-color: white;
+    padding: 2rem;
 }
 .offsetCard h2 {
     color: #686868;
@@ -96,24 +94,27 @@
     color: #A9A9A9;
 }
 @media screen and (min-width: 1024px) {
-    .offsetCard {
-        width: 45%;
-        /* max-width: 450px; */
-    }
     .unsetImg > span {
-        max-width: 60%;
+        /* max-width: 60%; */
         height: auto;
     }
-    /* .card {
-        object-fit: contain;
+    .objectWrapper {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 3rem;
+    }
+    .card {
+        margin: 3rem 0;
+        /* object-fit: contain;
         position: relative;
         display: block;
         margin: auto;
-        width: 90%;
+        width: 60%;
         margin: auto;
         background-color: #5b65ad;
         z-index: 1; */
-
+    }
         /* height: ; */
         /* max-width: 450px; */
         /* height: 20rem;
@@ -123,22 +124,7 @@
         align-items: center; */
     /* } */
 
-    .parallax {
-        margin-right: 10%;
-        /* background-color: white; */
-
-    }
-    
-    .sticky {
-        margin-left: 15%;
-        /* background-color: #ff6d6d; */
-    }
     /* .imgContainer {
         width:600px;
     } */
-}
-@media screen and (min-width: 1200px) {
-    .card {
-        width: 50%;
-    }
 }
