@@ -7,7 +7,6 @@ import styles from "../../styles/PropertyDescription.module.css";
 
 const PropertyDescription = () => {
     const [ moreTextShown, setMoreTextShown ] = useState(false);
-    // const [ showButton, setShowButton ] = useState(true);
 
     const showMoreTextHandler = () => {
         setMoreTextShown(true)

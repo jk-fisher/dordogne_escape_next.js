@@ -7,11 +7,6 @@
     max-width: 27rem;
     text-decoration: none;
     position: absolute;
-    /* text-align: center;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    width: 70%; */
     text-align: center;
     bottom: 15vh;
 }
@@ -19,12 +14,6 @@
 @media screen and (min-width: 320px){
     .h1 {
         font-size: 2.5rem;
-        max-width: 32rem;
-    }
-}
-@media screen and (min-width: 768px){
-    .h1 {
-        font-size: 3.5rem;
         max-width: 32rem;
     }
 }
@@ -40,5 +29,14 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px){
+    .h1 {
+        font-size: 3.5rem;
+        max-width: 32rem;
+    }
+    .hero {
+        padding-bottom: 3rem;
+    }
 }

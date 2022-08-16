@@ -47,7 +47,7 @@ const LocalArea = () => {
     const parallaxList = places.map((place, index) => {
         return (<li key={index} className={styles.objectWrapper}>
                     <Parallax style={{ zIndex: '-1' }}>
-                        <div className={`${styles.card} ${styles.unsetImg}`}>
+                        <div className={`${styles.imgCard} ${styles.unsetImg}`}>
                             <Image 
                                 className={styles.customImg}
                                 src={place.img}
@@ -58,7 +58,7 @@ const LocalArea = () => {
                                 />
                         </div>
                     </Parallax>
-                    <Parallax translateY={[0, -170]} className={`${styles.offsetCard} `}>
+                    <Parallax translateY={[0, -170]} className={`${styles.offsetTextCard} `}>
                         <div className={styles.white}>
                             <h2>Place to visit #0{index + 1}
                                 <br />

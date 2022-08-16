@@ -4,24 +4,6 @@
     margin-top: 5rem;
 }
 
-.card {
-    display: block;
-    position: relative;
-    margin: 0rem auto;
-    height: 100vh;
-    width: 100%;
-    object-fit: cover !important;
-    
-}
-
-.objectWrapper {
-   position:relative;
-   margin-top: 5rem;;
-}
-.customImg {
-    object-fit: cover;
-}
-
 .scrollText {
     font-size: 1.2rem;
     width: 100%;
@@ -32,19 +14,28 @@
     padding: 3rem  2rem;
     line-height: 2;
     color: rgb(49, 49, 49);
+    min-height: 500px;
 }
 
-.colBlock {
-    background-color: #e6e3d7;
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 75%;
-    right: 0;
-    top: 0;
-    z-index: -1;
+.objectWrapper {
+    position:relative;
+    margin-top: 5rem;;
+ }
+ 
+.imgCard {
+    display: block;
+    position: relative;
+    margin: 0rem auto;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover !important;
 }
-.offsetCard {
+
+.customImg {
+    object-fit: cover;
+}
+
+.offsetTextCard {
     position: absolute;
     display: block;
     margin: auto;
@@ -57,7 +48,17 @@
     z-index: 9;
     bottom: 0;
     right: 0;
-    /* background-color: white; */
+}
+
+.colBlock {
+    background-color: #e6e3d7;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
 
 .white {
@@ -65,7 +66,7 @@
     padding: 1rem;
     min-height: 350px;
 }
-.offsetCard h2 {
+.offsetTextCard h2 {
     color: #686868;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2rem;
@@ -75,35 +76,33 @@
     color: #A9A9A9;
 }
 @media screen and (min-width: 768px) {
-    .card {
-        /* width: 90%; */
-    }
-    .offsetCard {
+    .offsetTextCard {
         right: 10%;
         padding: 3rem;
     }
     .white {
         padding: 2rem;
     }
+    .scrollText {
+        min-height: auto;
+    }
 }
 @media screen and (min-width: 1024px) {
     .unsetImg > span {
-        /* max-width: 60%; */
         height: auto;
     }
     .objectWrapper {
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* margin: 6rem; */
-        margin-left: 10%;    }
-    .offsetCard {
+        margin-left: 10%;    
+    }
+    .offsetTextCard {
         position: relative;
         margin-left: -30%;
         margin-bottom: -3rem;
     }
-    
-    .card {
+    .imgCard {
         margin: 3rem 0;
     }
 
