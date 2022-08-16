@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/parallax": "^9.5.2",
+    "@react-spring/web": "^9.5.2",
     "aos": "^2.3.4",
+    "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "marked": "^4.0.12",
     "netlify-identity-widget": "^1.9.2",
@@ -19,7 +22,9 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-markdown": "^8.0.3",
-    "react-scroll-parallax": "^3.0.4",
+    "react-responsive": "^9.0.0-beta.10",
+    "react-scroll-parallax": "^3.3.1",
+    "react-spring": "^9.5.2",
     "react-spring-3d-carousel": "^1.2.1",
     "react-spring-3d-carousel-2": "^1.0.1",
     "react-transition-group": "^4.4.2",

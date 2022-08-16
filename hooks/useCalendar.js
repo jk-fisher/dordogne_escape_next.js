@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 export default () => {
-    const [ myTest, setMyTest ] = useState(true);
 
     const today = new Date();
     const [ myDate, setMyDate ] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));

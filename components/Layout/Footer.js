@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "../../styles/Footer.module.css"
 
-const Footer = () => {
+const Footer = (props) => {
     return ( 
-        <div className={styles.footer}>
+        <div className={`${styles.footer} ${props.className}`}>
             <div className="left">
                 <ul>
                     <li className={styles.item}>

@@ -6,13 +6,12 @@
     clear: both;
 }
 .cardContainer {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 @media screen and (min-width: 769px) {
     .cardContainer {
-        flex-direction: row;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 .container h2 {

@@ -3,6 +3,7 @@ import AOS from "aos";
 
 import "aos/dist/aos.css";import '../styles/globals.css'
 import Layout from '../components/Layout/Layout'
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }) {
     }, []);
   return (
           <Layout>
+            <ParallaxProvider>
                 <Component {...pageProps} />
+            </ParallaxProvider>
           </Layout> 
 
 

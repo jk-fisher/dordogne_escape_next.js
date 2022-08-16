@@ -4,7 +4,7 @@ import CalendarContext from "../../store/calendar-context";
 
 import Calendar from "./Calendar/Calendar";
 import PriceInfo from "./PriceInfo";
-import Button from "../UI/Button";
+// import Button from "../UI/Button";
 
 const Bookings = () => {
 
