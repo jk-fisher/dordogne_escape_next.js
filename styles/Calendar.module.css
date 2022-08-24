@@ -84,6 +84,11 @@
     transition: background-color 0.2s;
     /* margin: 0 auto; */
 }
+.active {
+    background-color: #dac298;
+    ;
+}
+
 @media screen and (min-width: 320px){
     .calendarContainer {
         min-width: 304px;

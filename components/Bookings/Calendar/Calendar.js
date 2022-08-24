@@ -34,8 +34,6 @@ const Calendar = () => {
         "December"
     ];
 
-    console.log(prevMonthArrowVisible, prevYearArrowVisible)
-
     const monthArrowVisible = prevMonthArrowVisible ? styles.icon : styles.none;
     const yearArrowVisible = prevYearArrowVisible ? styles.icon : styles.none; 
 

@@ -7,7 +7,7 @@ const PriceInfo = () => {
     const { UIDates, firstDateSelected, secondDateSelected } = useContext(CalendarContext);
 
     
-    console.log('price Info', UIDates)
+    // console.log('price Info', UIDates)
     return ( <div className={styles.priceContainer}>
         <div className={styles.dateEnquiry}>
             <div className={styles.header}>

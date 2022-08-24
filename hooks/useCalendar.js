@@ -6,31 +6,51 @@ export default () => {
     const today = new Date();
     const [ myDate, setMyDate ] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
     const [ visibleDates, setVisibleDates ] = useState([])
-
-    const [ UIDates, setUIDates ] = useState(false);
     
     const [ lastDate, setLastDate ] = useState(null);
     const [ firstDayIndex, setFirstDayIndex ] = useState(null);
     const [ lastDayIndex, setLastDayIndex ] = useState(null);
 
-    const [ clicked, setClicked ] = useState(null);
-    const [ clickedRange, setClickedRange ] = useState(null);
-;
+    ;
     const [ nextMonthDays, setNextMonthDays ] = useState(null);
     const [ prevLastDate, setPrevLastDate ] = useState(null);
+    
     let [ selectedDateCounter, setSelectedDateCounter ] = useState(0);
-    let [ firstDateSelected, setFirstDateSelected ] = useState(null);
-    let [ secondDateSelected, setSecondDateSelected ] = useState(null);
-    let [ firstIndexSelected, setFirstIndexSelected ] = useState(null);
-    let [ secondIndexSelected, setSecondIndexSelected ] = useState(null);
+    const [ clickedDates, setClickedDates ] = useState([]);
+    const [ dateID, setDateID ] = useState([]);
+    // let [ firstDateSelected, setFirstDateSelected ] = useState(null);
+    // let [ secondDateSelected, setSecondDateSelected ] = useState(null);
+    // let [ firstIndexSelected, setFirstIndexSelected ] = useState(null);
+    // let [ secondIndexSelected, setSecondIndexSelected ] = useState(null);
 
     const [prevMonthArrowVisible, setPrevMonthArrowVisible ] = useState(false);
     const [prevYearArrowVisible, setPrevYearArrowVisible ] = useState(false);
 
     useEffect(() => {
         renderCalendarHandler();
+        console.log('useCalendar useEffect ran')
     }, [myDate]);
 
+
+    useEffect(() => {
+        console.log('useEffect counter ran', selectedDateCounter, dateID);
+        if(selectedDateCounter === 1){
+            // setClickedDates([...clickedDates, newDateObject]);
+            console.log('counter = 1', selectedDateCounter, clickedDates);
+            
+            //if second date selected is after the first
+        }else if(selectedDateCounter === 2){
+            // setClickedDates([...clickedDates, newDateObject]);
+            console.log('counter = 2', selectedDateCounter, clickedDates);
+            
+            //if second date selected is before the first
+        } else if(selectedDateCounter === 3){
+            setSelectedDateCounter(1);
+            console.log('set counter back to 1', selectedDateCounter, clickedDates)
+            // setClickedDates([...clickedDates, newDateObject]);
+            // setClicked + clickedRange to null
+        } 
+    }, [selectedDateCounter]);
 
     const findIndexofDay = (dateObject) => {
         const myDate = dateObject.getDate();
@@ -51,11 +71,9 @@ export default () => {
         let dayOfMonth = (parseInt(indexOfDay) + 1) - firstDayIndex;
         let month = myDate.getMonth();
         let year = myDate.getFullYear();
-        console.log('MONTH', month, 'myDate', myDate, 'LASTDATE', lastDate); 
         if(dayOfMonth > lastDate){
             month++;
             dayOfMonth = dayOfMonth - lastDate;
-            console.log('MONTH', month, 'DAY', dayOfMonth); 
             if(month > 11){
                 year++
                 month = month - 12
@@ -73,28 +91,12 @@ export default () => {
     };
 
     const selectDatesHandler = (e) => {
-        setSelectedDateCounter(selectDatesHandler++)
-        console.log(e.currentTarget.dataset.id)
-        const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id)
-        const dateId = e.currentTarget.dataset.id;
-        console.log('DATE', newDateObject)
-        if(selectedDateCounter === 1 && !firstDateSelected){
-            setFirstDateSelected(newDateObject);
-            setFirstIndexSelected(dateId);
-        }else if(selectedDateCounter === 2 && firstDateSelected < newDateObject){
-            setSecondDateSelected(newDateObject);
-            setSecondIndexSelected(dateId);
-            setUIDates(true);
-        } else {
-            console.log('I ENTERED', newDateObject, dateId)
-            setFirstDateSelected(newDateObject);
-            setFirstIndexSelected(dateId);
-            setSecondDateSelected(null);
-            setSecondIndexSelected(null);
-            setSelectedDateCounter(1);
-            // setClicked + clickedRange to null
-        } 
-        console.log('SELECTDAYS', firstDateSelected, secondDateSelected, firstIndexSelected, secondIndexSelected, selectedDateCounter)
+        const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id);
+
+        setSelectedDateCounter(selectedDateCounter + 1);
+        setClickedDates([...clickedDates, newDateObject]);
+        // select the first date
+        
     }
     
     const highlightDaysHandler = (e) => {
@@ -106,8 +108,6 @@ export default () => {
 
 
     const renderCalendarHandler = () => {
-
-    console.log('renderCalendarRan', myDate)
         
         const lastDate = new Date(
             myDate.getFullYear(),
@@ -115,7 +115,6 @@ export default () => {
             0
             ).getDate();
         setLastDate(lastDate)
-        // console.log(lastDate)
         
         const prevLastDate = new Date(
             myDate.getFullYear(),
@@ -123,12 +122,10 @@ export default () => {
             0
         ).getDate();
         setPrevLastDate(prevLastDate)
-        // console.log(prevLastDate)
         
 
         const firstDayIndex = myDate.getDay();
         setFirstDayIndex(firstDayIndex)
-        // console.log('firstdayindex', firstDayIndex)
 
         const lastWeekdayIndex = new Date(
             myDate.getFullYear(),
@@ -138,15 +135,12 @@ export default () => {
     
         const nextMonthDays = (7 - lastWeekdayIndex) - 1;
         setNextMonthDays(nextMonthDays)
-        // console.log(nextMonthDays)
 
         
         // display prev month days 
         firstDayIndex ++;
         const prevdaysIndex = [...Array(firstDayIndex -1).keys()]; 
-        // console.log(prevdaysIndex)
         const prevMonthDates = prevdaysIndex.reverse().map((dayIndex) => {
-            // console.log('prevmonthdates', prevLastDate - dayIndex)
             return prevLastDate - dayIndex;
         })
 
@@ -158,13 +152,11 @@ export default () => {
 
         // display next month days
         const nextMonthIndex = [...Array(nextMonthDays).keys()];
-        // console.log('nxtMonthDays', nextMonthIndex)
         const nextMonthDates = nextMonthIndex.map((dayIndex) => {
             return dayIndex + 1
         })
 
         const lastDayIndex = lastDate + (firstDayIndex - 1);
-        // console.log(lastDayIndex, lastDate)
         setLastDayIndex(lastDayIndex);
         const visibleDates = [...prevMonthDates, ...thisMonthDates, ...nextMonthDates]
         setVisibleDates(visibleDates);
@@ -216,7 +208,6 @@ export default () => {
     
     return { myDate,
         visibleDates, 
-        UIDates,
         renderCalendarHandler, 
         highlightDaysHandler, 
         firstDayIndex, 
@@ -228,7 +219,7 @@ export default () => {
         nextYearHandler, 
         prevYearHandler,
         selectDatesHandler, 
-        firstDateSelected, 
-        secondDateSelected
+        // firstDateSelected, 
+        // secondDateSelected
          }
 }

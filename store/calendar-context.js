@@ -13,7 +13,8 @@ const CalendarContext = React.createContext({
     prevYearArrowVisible: false,
     UIDates: false,
     firstDateSelected: null,
-    secondDateSelected: null
+    secondDateSelected: null,
+    selectedDateCounter: 0
 }); 
 
 export default CalendarContext;

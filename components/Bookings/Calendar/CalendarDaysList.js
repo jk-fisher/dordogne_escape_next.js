@@ -21,7 +21,6 @@ const CalendarDaysList = () => {
     const days = visibleDates.map((day, index) => {
         // console.log('DAY', day,'INDEX', index)
         if(index < firstDayIndex){
-            console.log('prev day')
             return <CalendarDaysItem
                         className={prevClassName} 
                         index={index}
@@ -57,12 +56,10 @@ const CalendarDaysList = () => {
     })
     
     useEffect(() => {
-        console.log('useEffect', myDate)
         // renderCalendarHandler();
-    });
+        console.log('useEffect calendar list ran')
+    }, []);
     
-    // console.log('visible dates',  visibleDates)
-    console.log('CalendarDaysList',  myDate, visibleDates)
     return ( <ul className={styles.days}>
             {days}
         </ul> );
