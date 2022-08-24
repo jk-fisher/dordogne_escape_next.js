@@ -47,7 +47,6 @@ export default () => {
         } else if(selectedDateCounter === 3){
             setSelectedDateCounter(1);
             console.log('set counter back to 1', selectedDateCounter, clickedDates)
-            // setClickedDates([...clickedDates, newDateObject]);
             // setClicked + clickedRange to null
         } 
     }, [selectedDateCounter]);
@@ -94,7 +93,11 @@ export default () => {
         const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id);
 
         setSelectedDateCounter(selectedDateCounter + 1);
-        setClickedDates([...clickedDates, newDateObject]);
+        if(clickedDates.length > 1){
+            setClickedDates([newDateObject]);
+        } else {
+            setClickedDates([...clickedDates, newDateObject]);
+        }
         // select the first date
         
     }
