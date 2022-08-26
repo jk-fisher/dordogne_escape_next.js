@@ -86,7 +86,10 @@
 }
 .active {
     background-color: #dac298;
-    ;
+}
+.clicked {
+    background-color: #dac298;
+
 }
 
 @media screen and (min-width: 320px){

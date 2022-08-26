@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 export default () => {
-    const [ myTest, setMyTest ] = useState(true);
 
     const today = new Date();
     const [ myDate, setMyDate ] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
@@ -17,7 +16,7 @@ export default () => {
     
     let [ selectedDateCounter, setSelectedDateCounter ] = useState(0);
     const [ clickedDates, setClickedDates ] = useState([]);
-    const [ dateID, setDateID ] = useState([]);
+    const [ clickedObj, setClickedObj ] = useState([]);
     // let [ firstDateSelected, setFirstDateSelected ] = useState(null);
     // let [ secondDateSelected, setSecondDateSelected ] = useState(null);
     // let [ firstIndexSelected, setFirstIndexSelected ] = useState(null);
@@ -33,35 +32,37 @@ export default () => {
 
 
     useEffect(() => {
-        console.log('useEffect counter ran', selectedDateCounter, dateID);
         if(selectedDateCounter === 1){
-            // setClickedDates([...clickedDates, newDateObject]);
             console.log('counter = 1', selectedDateCounter, clickedDates);
             
             //if second date selected is after the first
         }else if(selectedDateCounter === 2){
-            // setClickedDates([...clickedDates, newDateObject]);
             console.log('counter = 2', selectedDateCounter, clickedDates);
             
             //if second date selected is before the first
         } else if(selectedDateCounter === 3){
             setSelectedDateCounter(1);
             console.log('set counter back to 1', selectedDateCounter, clickedDates)
-            // setClicked + clickedRange to null
         } 
+        const clickedObj = clickedDates.map((date) => {
+            return {date: date,
+                    index: findIndexofDay(date)};
+        });
+        setClickedObj(clickedObj)
     }, [selectedDateCounter]);
 
     const findIndexofDay = (dateObject) => {
-        const myDate = dateObject.getDate();
+        const date = dateObject.getDate();
         const month = dateObject.getMonth();
+        console.log(date, month, myDate)
         if(month === myDate.getMonth()-1){
             const prevLastDayIndex = firstDayIndex - 1;
-            const counterIndex = prevLastDate - myDate;
+            const counterIndex = prevLastDate - date;
             return prevLastDayIndex - counterIndex;
         } else if (month === myDate.getMonth()+1){
-            return myDate + lastDate + (firstDayIndex -1);
+            return date + lastDate + (firstDayIndex -1);
         } else if(month === myDate.getMonth()){
-            return myDate + (firstDayIndex -1)
+            return date + (firstDayIndex -1)
         };
 
     };
@@ -91,15 +92,12 @@ export default () => {
 
     const selectDatesHandler = (e) => {
         const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id);
-
         setSelectedDateCounter(selectedDateCounter + 1);
         if(clickedDates.length > 1){
             setClickedDates([newDateObject]);
         } else {
             setClickedDates([...clickedDates, newDateObject]);
-        }
-        // select the first date
-        
+        }        
     }
     
     const highlightDaysHandler = (e) => {
@@ -222,6 +220,7 @@ export default () => {
         nextYearHandler, 
         prevYearHandler,
         selectDatesHandler, 
+        clickedObj
         // firstDateSelected, 
         // secondDateSelected
          }

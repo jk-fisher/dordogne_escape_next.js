@@ -6,7 +6,7 @@ import CalendarDaysItem from "./CalendarDayItem";
 
 const CalendarDaysList = () => {
 
-    const { myDate, visibleDates, firstDayIndex, lastDayIndex, selectDatesHandler } = useContext(CalendarContext);
+    const { myDate, visibleDates, firstDayIndex, lastDayIndex, selectDatesHandler, clickedObj } = useContext(CalendarContext);
 
 
     const today = new Date();
@@ -20,6 +20,8 @@ const CalendarDaysList = () => {
 
     const days = visibleDates.map((day, index) => {
         // console.log('DAY', day,'INDEX', index)
+        console.log(clickedObj);
+        //map over clicked obj to add clicked class
         if(index < firstDayIndex){
             return <CalendarDaysItem
                         className={prevClassName} 
