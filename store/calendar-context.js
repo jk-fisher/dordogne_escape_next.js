@@ -6,6 +6,8 @@ const CalendarContext = React.createContext({
     nextYearHandler: () => {},
     prevMonthHandler: () => {},
     prevYearHandler: () => {},
+    createDateObjectHandler: () => {},
+    findIndexOfDay: () => {},
     visibleDates: [],
     firstDayIndex: null,
     lastDayIndex: null,
@@ -14,7 +16,12 @@ const CalendarContext = React.createContext({
     firstDateSelected: null,
     secondDateSelected: null,
     selectedDateCounter: 0,
-    clickedObj: null
+    clickedObj: null,
+    firstCalendarDate: null,
+    lastCalendarDate: null,
+    setFirstDayIndex: () => {},
+    setLastDate: () => {},
+    setPrevLastDate: () => {}
 }); 
 
 export default CalendarContext;
