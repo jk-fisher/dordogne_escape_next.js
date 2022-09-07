@@ -48,9 +48,25 @@ export default () => {
                     index: findIndexofDay(date)};
         });
         setClickedObj(clickedObj)
+        console.log(clickedObj)
     }, [selectedDateCounter]);
 
     const findIndexofDay = (dateObject) => {
+        const firstDayIndex = myDate.getDay();
+
+        const prevLastDate = new Date(
+            myDate.getFullYear(),
+            myDate.getMonth(),
+            0
+        ).getDate();
+    
+        const lastDate = new Date(
+            myDate.getFullYear(),
+            myDate.getMonth() + 1,
+            0
+            ).getDate();
+        
+        console.log(firstDayIndex, prevLastDate, lastDate)
         const date = dateObject.getDate();
         const month = dateObject.getMonth();
         console.log(dateObject, date, month, myDate)
