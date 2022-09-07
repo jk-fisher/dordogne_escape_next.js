@@ -71,18 +71,14 @@ export default () => {
         const month = dateObject.getMonth();
         console.log(dateObject, date, month, myDate)
         if(month === myDate.getMonth()-1){
-            console.log('from prev month', firstDayIndex, prevLastDate, date)
             const prevLastDayIndex = firstDayIndex - 1;
             const counterIndex = prevLastDate - date;
             return prevLastDayIndex - counterIndex;
         } else if (month === myDate.getMonth()+1){
-            console.log('from next month', date, lastDate, firstDayIndex)
             return date + lastDate + (firstDayIndex -1);
         } else if(month === myDate.getMonth()){
-            console.log('from this month', date, firstDayIndex)
             return date + (firstDayIndex -1)
         };
-
     };
 
     const createDateObjectHandler = (indexOfDay) => {
