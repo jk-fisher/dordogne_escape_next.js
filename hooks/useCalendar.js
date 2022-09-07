@@ -252,14 +252,15 @@ export default () => {
         nextYearHandler, 
         prevYearHandler,
         selectDatesHandler, 
-        clickedObj,
+        setClickedObj,
         firstCalendarDate,
         lastCalendarDate,
         createDateObjectHandler,
         findIndexofDay,
         setFirstDayIndex,
         setLastDate, 
-        setPrevLastDate
+        setPrevLastDate,
+        clickedObj
         
          }
 }

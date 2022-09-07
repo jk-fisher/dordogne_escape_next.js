@@ -20,14 +20,15 @@ const Bookings = () => {
         firstDayIndex, 
         lastDayIndex, 
         selectDatesHandler, 
-        clickedObj, 
+        setClickedObj, 
         firstCalendarDate, 
         lastCalendarDate, 
         createDateObjectHandler,
         findIndexofDay,
         setFirstDayIndex,
         setLastDate, 
-        setPrevLastDate
+        setPrevLastDate,
+        clickedObj
     } = useCalendar();
 
     return ( <section className={styles.bookingsWrapper}>
@@ -43,14 +44,15 @@ const Bookings = () => {
                 firstDayIndex, 
                 lastDayIndex, 
                 selectDatesHandler, 
-                clickedObj, 
+                setClickedObj, 
                 firstCalendarDate, 
                 lastCalendarDate, 
                 createDateObjectHandler,
                 findIndexofDay,
                 setFirstDayIndex,
                 setLastDate, 
-                setPrevLastDate
+                setPrevLastDate,
+                clickedObj
                  }}>
             <Calendar />
         <PriceInfo />

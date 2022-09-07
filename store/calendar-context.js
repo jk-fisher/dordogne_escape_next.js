@@ -16,12 +16,13 @@ const CalendarContext = React.createContext({
     firstDateSelected: null,
     secondDateSelected: null,
     selectedDateCounter: 0,
-    clickedObj: null,
     firstCalendarDate: null,
     lastCalendarDate: null,
     setFirstDayIndex: () => {},
     setLastDate: () => {},
-    setPrevLastDate: () => {}
+    setPrevLastDate: () => {},
+    setClickedObj: () => {},
+    clickedObj: null
 }); 
 
 export default CalendarContext;
