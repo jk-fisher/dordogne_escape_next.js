@@ -101,7 +101,6 @@ export default () => {
             };
         };
         const dateObject = new Date(year, month, dayOfMonth);
-        console.log(typeof(indexOfDay), dateObject)
         return dateObject;
     };
 
@@ -189,7 +188,10 @@ export default () => {
 
         //set the last date on the calendar
         if(nextMonthIndex.length === 0 ){
-            const lastCalendarDate = lastDate;
+            const lastCalendarDate = new Date(
+                myDate.getFullYear(),
+                myDate.getMonth(),
+                lastDate)
             setLastCalendarDate(lastCalendarDate)
         }else if(nextMonthIndex.length > 0){
             const lastCalendarDate = new Date(
