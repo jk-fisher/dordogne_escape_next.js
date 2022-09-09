@@ -42,6 +42,7 @@ const CalendarDaysList = () => {
     
     const days = visibleDates.map((day, index) => {
         //map over clicked obj to add clicked class
+        console.log(clickedObj)
         if(clickedObj.length === 1){
             firstOnPage = firstCalendarDate <= clickedObj[0].date && clickedObj[0].date <= lastCalendarDate
             lastOnPage = false
@@ -57,6 +58,8 @@ const CalendarDaysList = () => {
             isClicked = index >= clickedObj[0].index;
         }else if(firstOnPage && clickedObj.length === 1){
             isClicked = index === clickedObj[0].index;
+        }else if(!firstOnPage && !lastOnPage && clickedObj.length === 2){
+            isClicked = firstCalendarDate >= clickedObj[0].date && firstCalendarDate <= clickedObj[1].date
         }else{
             isClicked = false;
         }
