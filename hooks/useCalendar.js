@@ -107,11 +107,13 @@ export default () => {
     const selectDatesHandler = (e) => {
         const newDateObject = createDateObjectHandler(e.currentTarget.dataset.id);
         setSelectedDateCounter(selectedDateCounter + 1);
-        if(clickedDates.length > 1 || newDateObject < clickedDates[0] ){
-            setClickedDates([newDateObject]);
-        } else {
-            setClickedDates([...clickedDates, newDateObject]);
-        }        
+        if(newDateObject > new Date()){
+            if(clickedDates.length > 1 || newDateObject < clickedDates[0] ){
+                setClickedDates([newDateObject]);
+            } else {
+                setClickedDates([...clickedDates, newDateObject]);
+            }        
+        }
     }
     
     // const highlightDaysHandler = (e) => {
