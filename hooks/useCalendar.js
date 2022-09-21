@@ -48,9 +48,8 @@ export default () => {
                     index: findIndexofDay(date)};
         });
         setClickedObj(clickedObj)
-        console.log(clickedObj)
     }, [selectedDateCounter]);
-
+    
     const findIndexofDay = (dateObject) => {
         const firstDayIndex = myDate.getDay();
 
@@ -66,10 +65,8 @@ export default () => {
             0
             ).getDate();
         
-        console.log(firstDayIndex, prevLastDate, lastDate)
         const date = dateObject.getDate();
         const month = dateObject.getMonth();
-        console.log(dateObject, date, month, myDate)
         if(month === myDate.getMonth()-1){
             const prevLastDayIndex = firstDayIndex - 1;
             const counterIndex = prevLastDate - date;
@@ -116,14 +113,6 @@ export default () => {
         }
     }
     
-    // const highlightDaysHandler = (e) => {
-    //     // console.log(e, 'dateClicked')
-        
-    // }
-    
-
-
-
     const renderCalendarHandler = () => {
         
         const lastDate = new Date(

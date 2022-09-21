@@ -88,10 +88,12 @@
     background-color: #dac298;
 }
 .clicked {
-    background-color: #515b8569;
+    /* background-color: #515b8569; */
+    background-color: #0c164440;;
 }
 .darker {
-    background-color: #515b85bf;
+    /* background-color: #515b85bf; */
+    background-color: #383a5c;
     color: rgb(202, 202, 202);
 }
 @media screen and (min-width: 320px){

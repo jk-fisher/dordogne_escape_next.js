@@ -6,6 +6,7 @@
     line-height: 1.4em;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     margin: auto;
+    min-height: 520px;
 }
 @media screen and (max-width: 790px){
     .priceContainer{
@@ -17,7 +18,6 @@
     font-size: 2rem;
     line-height: 1.4em;
 }
-
 .white{
     font-size: 1.8rem;
     font-weight: 400;
@@ -37,11 +37,30 @@
     box-sizing: border-box;
 }
 .priceFiller {
-    margin: 20px auto;
+    margin: 3rem auto;
     max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .info {
     font-size: 1.2rem;
+}
+.blue {
+    color: #323349;
+}
+.caps {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flexEnd {
+    align-self: flex-end;
+    margin-bottom: 0;
 }
 .priceBreakdown {
     font-family: Arial, Helvetica, sans-serif;
@@ -52,5 +71,5 @@
     padding: 5px 0px;
 }
 .bookBtn {
-    margin: 2rem auto;
+    margin: 2rem auto !important;
 }
