@@ -5,63 +5,62 @@ import CalendarContext from "../../store/calendar-context";
 import Calendar from "./Calendar/Calendar";
 import PriceInfo from "./PriceInfo";
 
-import useModal from "../../hooks/useModal";
-import Button from "../UI/Button";
-import BookingForm from "./BookingForm";
-
 const Bookings = () => {
+  // const { myTest } = useCalendar();
+  const {
+    myDate,
+    nextMonthHandler,
+    nextYearHandler,
+    prevMonthHandler,
+    prevYearHandler,
+    prevMonthArrowVisible,
+    prevYearArrowVisible,
+    visibleDates,
+    firstDayIndex,
+    lastDayIndex,
+    selectDatesHandler,
+    setClickedObj,
+    firstCalendarDate,
+    lastCalendarDate,
+    createDateObjectHandler,
+    findIndexofDay,
+    setFirstDayIndex,
+    setLastDate,
+    setPrevLastDate,
+    clickedObj,
+  } = useCalendar();
 
-    // const { myTest } = useCalendar();
-    const {myDate, 
-        nextMonthHandler, 
-        nextYearHandler, 
-        prevMonthHandler, 
-        prevYearHandler, 
-        prevMonthArrowVisible, 
-        prevYearArrowVisible, 
-        visibleDates, 
-        firstDayIndex, 
-        lastDayIndex, 
-        selectDatesHandler, 
-        setClickedObj, 
-        firstCalendarDate, 
-        lastCalendarDate, 
-        createDateObjectHandler,
-        findIndexofDay,
-        setFirstDayIndex,
-        setLastDate, 
-        setPrevLastDate,
-        clickedObj
-    } = useCalendar();
-
-    
-    return ( <section className={styles.bookingsWrapper}>
-        <CalendarContext.Provider 
-            value={{ myDate, 
-                nextMonthHandler, 
-                nextYearHandler, 
-                prevMonthHandler, 
-                prevYearHandler, 
-                prevMonthArrowVisible, 
-                prevYearArrowVisible, 
-                visibleDates, 
-                firstDayIndex, 
-                lastDayIndex, 
-                selectDatesHandler, 
-                setClickedObj, 
-                firstCalendarDate, 
-                lastCalendarDate, 
-                createDateObjectHandler,
-                findIndexofDay,
-                setFirstDayIndex,
-                setLastDate, 
-                setPrevLastDate,
-                clickedObj
-                 }}>
-            <Calendar />
+  return (
+    <section className={styles.bookingsWrapper}>
+      <CalendarContext.Provider
+        value={{
+          myDate,
+          nextMonthHandler,
+          nextYearHandler,
+          prevMonthHandler,
+          prevYearHandler,
+          prevMonthArrowVisible,
+          prevYearArrowVisible,
+          visibleDates,
+          firstDayIndex,
+          lastDayIndex,
+          selectDatesHandler,
+          setClickedObj,
+          firstCalendarDate,
+          lastCalendarDate,
+          createDateObjectHandler,
+          findIndexofDay,
+          setFirstDayIndex,
+          setLastDate,
+          setPrevLastDate,
+          clickedObj,
+        }}
+      >
+        <Calendar />
         <PriceInfo />
-        </CalendarContext.Provider>
-    </section> );
-}
- 
+      </CalendarContext.Provider>
+    </section>
+  );
+};
+
 export default Bookings;
