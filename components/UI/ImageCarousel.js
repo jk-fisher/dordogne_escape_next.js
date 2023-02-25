@@ -5,62 +5,71 @@ import styles from "../../styles/ImageCarousel.module.css";
 
 import dynamic from "next/dynamic";
 
-const Carousel = dynamic(() => import("react-spring-3d-carousel-2"), {
+const Carousel = dynamic(() => import("react-spring-3d-carousel"), {
   ssr: false,
 });
 
 const ImageCarousel = ({ images }) => {
-    const timer = useRef();
+  const timer = useRef();
 
-    const [state, setState] = useState({
-            goToSlide: 0,
-            offsetRadius: 3,
-            showNavigation: false,
-            config: config.gentle
+  const [state, setState] = useState({
+    goToSlide: 0,
+    offsetRadius: 3,
+    showNavigation: false,
+    config: config.gentle,
+  });
+
+  console.log("images", images);
+
+  const imageArray = images.slice(1).map((imageId, index) => {
+    return {
+      key: imageId,
+      content: (
+        <Image
+          className={styles.image}
+          src={`/carouselImages/${imageId}.jpg`}
+          alt={index}
+          width={1000}
+          height={1000}
+          onClick={() =>
+            setState({ goToSlide: index, offsetRadius: state.offsetRadius })
+          }
+        />
+      ),
+    };
+  });
+  imageArray.map((slide, index) => {
+    return slide;
+  });
+
+  //stops the automatic slide when clicked
+  // clearInterval(timer.current)
+
+  const onChangeInput = (e) => {
+    setState({
+      [e.target.name]: parseInt(e.target.value, 10) || 0,
     });
+  };
 
-    console.log('images', images)
+  let xDown = null;
+  let yDown = null;
 
-    const imageArray = images.slice(1).map((imageId, index) => {
-        return {
-            key: imageId,
-            content: <Image className={styles.image} src={`/carouselImages/${imageId}.jpg`} alt={index} width={1000}
-            height={1000} onClick={() => setState({ goToSlide: index, offsetRadius: state.offsetRadius })}/>
-        } 
-    })
-    imageArray.map((slide, index) => {
-      return slide
-    })
+  const getTouches = (evt) => {
+    return (
+      evt.touches || evt.originalEvent.touches // browser API
+    ); // jQuery
+  };
 
-            //stops the automatic slide when clicked
-            // clearInterval(timer.current)
+  const handleTouchStart = (evt) => {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  };
 
-
-    const onChangeInput = (e) => {
-        setState({
-        [e.target.name]: parseInt(e.target.value, 10) || 0
-        });
-    };
-
-    let xDown = null;
-    let yDown = null;
-
-    const getTouches = (evt) => {
-        return (
-        evt.touches || evt.originalEvent.touches // browser API
-        ); // jQuery
-    };
-
-    const handleTouchStart = (evt) => {
-        const firstTouch = getTouches(evt)[0];
-        xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
-    };
-
-    const handleTouchMove = (evt) => {
-        if (!xDown || !yDown) {
-        return;
-        }
+  const handleTouchMove = (evt) => {
+    if (!xDown || !yDown) {
+      return;
+    }
 
     let xUp = evt.touches[0].clientX;
     let yUp = evt.touches[0].clientY;
@@ -90,11 +99,11 @@ const ImageCarousel = ({ images }) => {
   };
 
   const tick = () => {
-    setState((prevIndex) => { 
-        console.log('tick', prevIndex)
-        return { ...prevIndex, goToSlide: prevIndex.goToSlide + 1 }
-    })
-  }
+    setState((prevIndex) => {
+      console.log("tick", prevIndex);
+      return { ...prevIndex, goToSlide: prevIndex.goToSlide + 1 };
+    });
+  };
 
   // useEffect(() => {
   //   const viewportResizeHandler = () => {
@@ -112,27 +121,26 @@ const ImageCarousel = ({ images }) => {
 
   useEffect(() => {
     timer.current = setInterval(() => {
-      tick()
+      tick();
     }, 3800);
     return () => clearInterval(timer.current);
   }, []);
 
   return (
-
-      <div
-        className={styles.carousel}
-        // style={{ boxSizing: "content-box", width: "100%", margin: "0 auto" }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-      >
-        <Carousel 
-          slides={imageArray}
-          goToSlide={state.goToSlide}
-          offsetRadius={state.offsetRadius}
-          showNavigation={state.showNavigation}
-          animationConfig={state.config}
-        />
-        {/* <div
+    <div
+      className={styles.carousel}
+      // style={{ boxSizing: "content-box", width: "100%", margin: "0 auto" }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
+      <Carousel
+        slides={imageArray}
+        goToSlide={state.goToSlide}
+        offsetRadius={state.offsetRadius}
+        showNavigation={state.showNavigation}
+        animationConfig={state.config}
+      />
+      {/* <div
           style={{
             margin: "0 auto",
             marginTop: "2rem",
@@ -200,10 +208,9 @@ const ImageCarousel = ({ images }) => {
               Stiff Transition
             </button>
           </div> */}
-        {/* </div> */}
-      </div>
-
+      {/* </div> */}
+    </div>
   );
 };
 
-export { ImageCarousel as default, Carousel }
+export { ImageCarousel as default, Carousel };
