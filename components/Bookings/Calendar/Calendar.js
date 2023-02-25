@@ -4,7 +4,7 @@ import useCalendar from "../../../hooks/useCalendar";
 
 import CalendarDaysList from "./CalendarDaysList";
 import CalendarContext from "../../../store/calendar-context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 
 const Calendar = () => {

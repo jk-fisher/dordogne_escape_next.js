@@ -3,8 +3,9 @@ import styles from "../../styles/PriceInfo.module.css";
 import Button from "../UI/Button";
 import CalendarContext from "../../store/calendar-context";
 import ModalContext from "../../store/modal-context";
-import Modal from "../../hooks/useModal"
+import Modal from "../UI/Modal";
 import BookingForm from "./BookingForm";
+
 
 const PriceInfo = () => {
     const { openModalHandler } = useContext(ModalContext);
@@ -31,7 +32,7 @@ const PriceInfo = () => {
                 <div className={styles.flexRow}>
                     <span className={`${styles.caps} ${styles.blue}`}>£50 x {calculateNights()} nights: </span><span className={` ${styles.blue}`}>{`£${(calculateNights()) * 50}`}</span>
                 </div>
-                <Button onClick={() => openModalHandler(<BookingForm/>)} className={styles.bookBtn}>Request to book</Button>
+                <Button onClick={() => openModalHandler(<BookingForm />)} className={styles.bookBtn}>Request to book</Button>
                 <div>
                     <span className={`${styles.blue} ${styles.flexEnd}`}>You won't be charged yet</span>
                 </div>
@@ -40,8 +41,8 @@ const PriceInfo = () => {
                 <div className={styles.info}> 10% OFF<br />on weekly bookings</div> <br /> 
                 <div className={styles.info}>Select your dates on the calender to check availability.</div> 
             </div>}
-            <Modal />
         </div> 
+        <Modal />
     </div> );
 }
  

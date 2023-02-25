@@ -2,9 +2,11 @@ import Head from "next/head";
 import { Fragment } from "react";
 
 import Bookings from "../../components/Bookings/Bookings";
-
+import ModalContext from "../../store/modal-context";
+import useModal from "../../hooks/useModal";
 
 const bookings = () => {
+    const { showModal, openModalHandler, closeModalHandler, modalContent } = useModal();
     return ( 
         <Fragment>
             <Head>
@@ -20,7 +22,9 @@ const bookings = () => {
                     content="Le Petit Cottage, Dordogne, France, holiday, rental, self-catered, accomodation"
                 />
             </Head>
-            <Bookings />
+            <ModalContext.Provider value={{ showModal, openModalHandler, closeModalHandler, modalContent }}>
+                <Bookings />
+            </ModalContext.Provider>
         </Fragment>
      );
 }

@@ -4,7 +4,10 @@ import CalendarContext from "../../store/calendar-context";
 
 import Calendar from "./Calendar/Calendar";
 import PriceInfo from "./PriceInfo";
+
+import useModal from "../../hooks/useModal";
 import Button from "../UI/Button";
+import BookingForm from "./BookingForm";
 
 const Bookings = () => {
 
@@ -31,6 +34,7 @@ const Bookings = () => {
         clickedObj
     } = useCalendar();
 
+    
     return ( <section className={styles.bookingsWrapper}>
         <CalendarContext.Provider 
             value={{ myDate, 

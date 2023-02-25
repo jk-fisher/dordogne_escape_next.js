@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    min-height: 80vh;
 }
 
 .flex {
@@ -31,34 +32,4 @@
 
 .clickedRange {
     background-color: #F1F1F1;
-}
-.book-btn {
-    text-align: center;
-    background-color: #EDCC77;
-    border-radius: 10px;
-    padding: 20px 70px 20px;
-    font-family: 'Mulish', sans-serif;
-    color: white;
-    font-size: 1em;
-    text-decoration: none;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    /* margin-bottom: 20px; */
-
-    /*color gradient*/
-    
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-
-}    
-.book-btn:hover {
-    background-color:#F4D482;
-    /* padding: 22px 72px 22px; */
-
-}
-.book-btn:focus {
-    outline: none !important;
 }

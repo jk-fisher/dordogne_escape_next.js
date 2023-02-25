@@ -1,0 +1,61 @@
+.content {
+    overflow-y: scroll;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    max-width: 400px;
+    height: 70vh;
+    min-height: 650px;
+}
+.flex > label {
+    margin-top: 1.3rem;
+}
+.header {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2rem;
+        color: #707070;
+        text-align: center;
+        margin: 1rem;
+        line-height: 1.5;
+}
+.input {
+    height: 2.2rem;
+    color: #797979;
+    padding: 10px;
+    border:none;
+    background-color:#F4F4F4;
+    box-shadow: 1px 3px 2px rgb(206, 206, 206);
+    outline: none;
+    white-space: pre-line;
+    border-radius: 4px;
+}
+.input:hover{
+    box-shadow: none;
+}
+.input:focus{
+    box-shadow: 1px 3px 2px rgb(159, 159, 159);
+}
+.input::placeholder{
+    color: #9c9c9c;
+    margin-top: 0;
+    padding: 5px;
+    white-space: pre-line;
+}
+.message {
+    min-height: 6rem;
+    height: fit-content;
+}
+.success{
+    color: #EDCC77;
+    text-align: center;
+}
+.fail {
+    color: red;
+    font-size: 0.9rem;
+}
+.bookBtn {
+    margin: 2rem auto !important;
+}
