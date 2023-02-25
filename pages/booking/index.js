@@ -5,7 +5,7 @@ import Bookings from "../../components/Bookings/Bookings";
 import ModalContext from "../../store/modal-context";
 import useModal from "../../hooks/useModal";
 
-const Bookings = () => {
+const Booking = () => {
   const { showModal, openModalHandler, closeModalHandler, modalContent } =
     useModal();
   return (
@@ -32,4 +32,4 @@ const Bookings = () => {
   );
 };
 
-export default Bookings;
+export default Booking;
