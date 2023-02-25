@@ -9,8 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-spring/parallax": "^9.5.2",
-    "@react-spring/web": "^9.5.2",
+    "@sendgrid/mail": "^7.7.0",
     "aos": "^2.3.4",
     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",

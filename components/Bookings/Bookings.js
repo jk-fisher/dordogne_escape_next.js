@@ -4,18 +4,63 @@ import CalendarContext from "../../store/calendar-context";
 
 import Calendar from "./Calendar/Calendar";
 import PriceInfo from "./PriceInfo";
-// import Button from "../UI/Button";
+
+import useModal from "../../hooks/useModal";
+import Button from "../UI/Button";
+import BookingForm from "./BookingForm";
 
 const Bookings = () => {
 
     // const { myTest } = useCalendar();
-    const {myDate, nextMonthHandler, nextYearHandler, prevMonthHandler, prevYearHandler, prevMonthArrowVisible, prevYearArrowVisible, visibleDates, firstDayIndex, lastDayIndex } = useCalendar();
+    const {myDate, 
+        nextMonthHandler, 
+        nextYearHandler, 
+        prevMonthHandler, 
+        prevYearHandler, 
+        prevMonthArrowVisible, 
+        prevYearArrowVisible, 
+        visibleDates, 
+        firstDayIndex, 
+        lastDayIndex, 
+        selectDatesHandler, 
+        setClickedObj, 
+        firstCalendarDate, 
+        lastCalendarDate, 
+        createDateObjectHandler,
+        findIndexofDay,
+        setFirstDayIndex,
+        setLastDate, 
+        setPrevLastDate,
+        clickedObj
+    } = useCalendar();
 
+    
     return ( <section className={styles.bookingsWrapper}>
-        <CalendarContext.Provider value={{ myDate, nextMonthHandler, nextYearHandler, prevMonthHandler, prevYearHandler, prevMonthArrowVisible, prevYearArrowVisible, visibleDates, firstDayIndex, lastDayIndex }}>
+        <CalendarContext.Provider 
+            value={{ myDate, 
+                nextMonthHandler, 
+                nextYearHandler, 
+                prevMonthHandler, 
+                prevYearHandler, 
+                prevMonthArrowVisible, 
+                prevYearArrowVisible, 
+                visibleDates, 
+                firstDayIndex, 
+                lastDayIndex, 
+                selectDatesHandler, 
+                setClickedObj, 
+                firstCalendarDate, 
+                lastCalendarDate, 
+                createDateObjectHandler,
+                findIndexofDay,
+                setFirstDayIndex,
+                setLastDate, 
+                setPrevLastDate,
+                clickedObj
+                 }}>
             <Calendar />
-        </CalendarContext.Provider>
         <PriceInfo />
+        </CalendarContext.Provider>
     </section> );
 }
  

@@ -4,7 +4,7 @@ import useCalendar from "../../../hooks/useCalendar";
 
 import CalendarDaysList from "./CalendarDaysList";
 import CalendarContext from "../../../store/calendar-context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 
 const Calendar = () => {
@@ -33,8 +33,6 @@ const Calendar = () => {
         "November",
         "December"
     ];
-
-    console.log(prevMonthArrowVisible, prevYearArrowVisible)
 
     const monthArrowVisible = prevMonthArrowVisible ? styles.icon : styles.none;
     const yearArrowVisible = prevYearArrowVisible ? styles.icon : styles.none; 
