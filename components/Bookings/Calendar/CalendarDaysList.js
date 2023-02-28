@@ -17,15 +17,15 @@ const CalendarDaysList = () => {
     clickedObj,
   } = useContext(CalendarContext);
 
-  useEffect(() => {
-    if (clickedObj.length > 0) {
-      const newObj = clickedObj.map((dateobj) => {
-        const newIndex = findIndexofDay(dateobj.date);
-        return { ...dateobj, index: newIndex };
-      });
-      setClickedObj(newObj);
-    }
-  }, [myDate]);
+  // useEffect(() => {
+  //   if (clickedObj.length > 0) {
+  //     const newObj = clickedObj.map((dateobj) => {
+  //       const newIndex = findIndexofDay(dateobj.date);
+  //       return { ...dateobj, index: newIndex };
+  //     });
+  //     setClickedObj(newObj);
+  //   }
+  // }, [myDate]);
 
   const firstOnPage = false;
   const lastOnPage = false;
