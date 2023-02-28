@@ -91,7 +91,7 @@ const BookingForm = () => {
 
   return (
     <div>
-      <form className={styles.flex} onSubmit={handleSubmit}>
+      <form className={styles.flex} onSubmit={() => console.log}>
         <h2 className={styles.header}>Request to stay at Le Petit Cottage</h2>
         {displayForm && (
           <Fragment>
