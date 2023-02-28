@@ -26,10 +26,12 @@ const CalendarDaysList = () => {
       setClickedObj(newObj);
       console.log("INSIDE USEEFFECT", clickedObj, newObj);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myDate]);
 
   useEffect(() => {
     updateDateObj();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [updateDateObj]);
 
   // const [ isOnPage, setIsOnPage ] = useState(false);
