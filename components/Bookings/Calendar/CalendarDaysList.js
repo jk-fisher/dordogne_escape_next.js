@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import CalendarContext from "../../../store/calendar-context";
 import styles from "../../../styles/Calendar.module.css";
 import CalendarDaysItem from "./CalendarDayItem";
@@ -16,16 +16,21 @@ const CalendarDaysList = () => {
     findIndexofDay,
     clickedObj,
   } = useContext(CalendarContext);
+  const [mount, setMount] = useState(false);
 
   useEffect(() => {
-    if (clickedObj.length > 0) {
+    if (!mount) {
+      setMount(true);
+    }
+    if (clickedObj.length > 0 && mount) {
       const newObj = clickedObj.map((dateobj) => {
         const newIndex = findIndexofDay(dateobj.date);
         return { ...dateobj, index: newIndex };
       });
       setClickedObj(newObj);
+      console.log("INSIDE USEEFFECT", clickedObj, newObj);
     }
-  }, [myDate]);
+  }, [myDate, mount]);
 
   // const [ isOnPage, setIsOnPage ] = useState(false);
   const firstOnPage = false;
@@ -45,12 +50,12 @@ const CalendarDaysList = () => {
     //map over clicked obj to add clicked class
     // console.log(clickedObj)
     if (clickedObj.length === 1) {
-      console.log(
-        "entered 1",
-        firstCalendarDate,
-        clickedObj[0].date,
-        lastCalendarDate
-      );
+      // console.log(
+      //   "entered 1",
+      //   firstCalendarDate,
+      //   clickedObj[0].date,
+      //   lastCalendarDate
+      // );
       firstOnPage =
         firstCalendarDate <= clickedObj[0].date &&
         clickedObj[0].date <= lastCalendarDate;
