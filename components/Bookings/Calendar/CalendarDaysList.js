@@ -17,24 +17,16 @@ const CalendarDaysList = () => {
     clickedObj,
   } = useContext(CalendarContext);
 
-  const updateDateObj = useCallback(() => {
+  useEffect(() => {
     if (clickedObj.length > 0) {
       const newObj = clickedObj.map((dateobj) => {
         const newIndex = findIndexofDay(dateobj.date);
         return { ...dateobj, index: newIndex };
       });
       setClickedObj(newObj);
-      console.log("INSIDE USEEFFECT", clickedObj, newObj);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myDate]);
 
-  useEffect(() => {
-    updateDateObj();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [updateDateObj]);
-
-  // const [ isOnPage, setIsOnPage ] = useState(false);
   const firstOnPage = false;
   const lastOnPage = false;
   const isClicked = false;
