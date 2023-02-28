@@ -25,7 +25,7 @@ const CalendarDaysList = () => {
       });
       setClickedObj(newObj);
     }
-  }, [myDate, clickedObj, findIndexofDay, setClickedObj]);
+  }, [myDate]);
 
   // const [ isOnPage, setIsOnPage ] = useState(false);
   const firstOnPage = false;
