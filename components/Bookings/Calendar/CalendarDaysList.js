@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useCallback } from "react";
 import CalendarContext from "../../../store/calendar-context";
 import styles from "../../../styles/Calendar.module.css";
 import CalendarDaysItem from "./CalendarDayItem";
@@ -16,13 +16,9 @@ const CalendarDaysList = () => {
     findIndexofDay,
     clickedObj,
   } = useContext(CalendarContext);
-  const [mount, setMount] = useState(false);
 
-  useEffect(() => {
-    if (!mount) {
-      setMount(true);
-    }
-    if (clickedObj.length > 0 && mount) {
+  const updateDateObj = useCallback(() => {
+    if (clickedObj.length > 0) {
       const newObj = clickedObj.map((dateobj) => {
         const newIndex = findIndexofDay(dateobj.date);
         return { ...dateobj, index: newIndex };
@@ -30,7 +26,11 @@ const CalendarDaysList = () => {
       setClickedObj(newObj);
       console.log("INSIDE USEEFFECT", clickedObj, newObj);
     }
-  }, [myDate, mount]);
+  }, [myDate]);
+
+  useEffect(() => {
+    updateDateObj();
+  }, [updateDateObj]);
 
   // const [ isOnPage, setIsOnPage ] = useState(false);
   const firstOnPage = false;
